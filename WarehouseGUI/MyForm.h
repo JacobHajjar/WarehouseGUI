@@ -38,9 +38,14 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
+
+
+	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button1;
+
+
 	protected:
 
 	protected:
@@ -60,18 +65,20 @@ namespace WarehouseGUI {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->textBox2);
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->textBox1);
@@ -83,31 +90,18 @@ namespace WarehouseGUI {
 			this->panel1->Size = System::Drawing::Size(450, 361);
 			this->panel1->TabIndex = 0;
 			// 
-			// label1
+			// textBox1
 			// 
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
-			this->label1->Location = System::Drawing::Point(0, 113);
-			this->label1->MaximumSize = System::Drawing::Size(450, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(450, 46);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Sign In";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->label2->Location = System::Drawing::Point(15, 159);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(86, 20);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Username";
-			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
+			this->textBox1->Location = System::Drawing::Point(143, 203);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(170, 22);
+			this->textBox1->TabIndex = 3;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
 			// label3
 			// 
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24));
+			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(0, 0);
 			this->label3->MaximumSize = System::Drawing::Size(450, 0);
 			this->label3->Name = L"label3";
@@ -117,31 +111,62 @@ namespace WarehouseGUI {
 			this->label3->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
 			// 
-			// textBox1
+			// label2
 			// 
-			this->textBox1->Location = System::Drawing::Point(19, 182);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(170, 22);
-			this->textBox1->TabIndex = 3;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label2->ForeColor = System::Drawing::Color::White;
+			this->label2->Location = System::Drawing::Point(0, 169);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(450, 20);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Username";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
+			// 
+			// label1
+			// 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(0, 113);
+			this->label1->MaximumSize = System::Drawing::Size(450, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(450, 46);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Sign In";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(19, 242);
+			this->textBox2->Location = System::Drawing::Point(143, 272);
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->PasswordChar = '*';
 			this->textBox2->Size = System::Drawing::Size(170, 22);
 			this->textBox2->TabIndex = 5;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged_1);
 			// 
 			// label4
 			// 
-			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->label4->Location = System::Drawing::Point(15, 219);
+			this->label4->ForeColor = System::Drawing::Color::White;
+			this->label4->Location = System::Drawing::Point(0, 238);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(83, 20);
+			this->label4->Size = System::Drawing::Size(450, 20);
 			this->label4->TabIndex = 4;
 			this->label4->Text = L"Password";
-			this->label4->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
+			this->label4->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Black;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(143, 328);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(170, 33);
+			this->button1->TabIndex = 6;
+			this->button1->Text = L"Sign In";
+			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// MyForm
 			// 
@@ -168,6 +193,10 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

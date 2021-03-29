@@ -1,4 +1,5 @@
 #pragma once
+#include "employeeUI.h"
 
 namespace WarehouseGUI {
 
@@ -102,6 +103,7 @@ namespace WarehouseGUI {
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Sign In";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// textBox2
 			// 
@@ -197,6 +199,12 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	employeeUI ^empUI = gcnew employeeUI();
+	empUI->ShowDialog();
+	this->Close();
 }
 };
 }

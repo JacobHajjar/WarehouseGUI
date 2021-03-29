@@ -1,5 +1,4 @@
 #pragma once
-
 namespace WarehouseGUI {
 
 	using namespace System;
@@ -34,12 +33,27 @@ namespace WarehouseGUI {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Panel^ panel1;
+
+
+
+
+
+
+
+
+
+
+
+	protected:
+
+	protected:
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -48,12 +62,45 @@ namespace WarehouseGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"employeeUI";
-			this->Padding = System::Windows::Forms::Padding(0);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(employeeUI::typeid));
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->SuspendLayout();
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->panel1->Location = System::Drawing::Point(130, 37);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(450, 361);
+			this->panel1->TabIndex = 0;
+			// 
+			// employeeUI
+			// 
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(702, 433);
+			this->Controls->Add(this->panel1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->Name = L"employeeUI";
+			this->Text = L"Omni-Warehouse";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }

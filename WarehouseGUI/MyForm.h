@@ -65,13 +65,13 @@ namespace WarehouseGUI {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -89,6 +89,39 @@ namespace WarehouseGUI {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(450, 361);
 			this->panel1->TabIndex = 0;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Black;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(143, 328);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(170, 33);
+			this->button1->TabIndex = 6;
+			this->button1->Text = L"Sign In";
+			this->button1->UseVisualStyleBackColor = false;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(143, 272);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->PasswordChar = '*';
+			this->textBox2->Size = System::Drawing::Size(170, 22);
+			this->textBox2->TabIndex = 5;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged_1);
+			// 
+			// label4
+			// 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label4->ForeColor = System::Drawing::Color::White;
+			this->label4->Location = System::Drawing::Point(0, 238);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(450, 20);
+			this->label4->TabIndex = 4;
+			this->label4->Text = L"Password";
+			this->label4->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// textBox1
 			// 
@@ -134,39 +167,6 @@ namespace WarehouseGUI {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Sign In";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(143, 272);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->PasswordChar = '*';
-			this->textBox2->Size = System::Drawing::Size(170, 22);
-			this->textBox2->TabIndex = 5;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged_1);
-			// 
-			// label4
-			// 
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->label4->ForeColor = System::Drawing::Color::White;
-			this->label4->Location = System::Drawing::Point(0, 238);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(450, 20);
-			this->label4->TabIndex = 4;
-			this->label4->Text = L"Password";
-			this->label4->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::Black;
-			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::White;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(143, 328);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(170, 33);
-			this->button1->TabIndex = 6;
-			this->button1->Text = L"Sign In";
-			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// MyForm
 			// 

@@ -117,6 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>We are trying to build a Full Warehouse Inventory System that would:
+●     Scan a file and add inventory to the database. It will require the user to input a .text file when running the executable it will scan the file and update the counts of each product found.
+●     Give access to only authorized users by requiring password input to display information on stock
+●     Update the database every time a product is added or bought or returned. A database with counts of each product will be kept and the program will keep track of what is sold or returned and update the database accordingly. 
+The language that would be used should be C++ unless it becomes difficult to make a good design then we could switch to python.
+To summarize: 
+The program will need a password to allow login.
+The program should allow the user to see the amount of inventory we have for each product.
+The program will have a user friendly GUI where the user will easily enter information and look for data.
+The program database will be in a vector or in a text file that could be modified by the Admin only.
+ 
+The reason we chose this project is because we feel that it will incorporate a range of different programming concepts and demonstrate the ability to create something with a real world application. :</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

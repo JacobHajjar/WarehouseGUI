@@ -1,6 +1,5 @@
 #pragma once
 #include "employeeUI.h"
-
 namespace WarehouseGUI {
 
 	using namespace System;
@@ -202,9 +201,8 @@ private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::Eve
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	employeeUI ^empUI = gcnew employeeUI();
+	employeeUI ^empUI = gcnew employeeUI(this);
 	empUI->ShowDialog();
-	this->Close();
 }
 };
 }

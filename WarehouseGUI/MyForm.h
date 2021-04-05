@@ -203,6 +203,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	this->Hide();
 	employeeUI ^empUI = gcnew employeeUI(this);
 	empUI->ShowDialog();
+	this->Show();
 }
 };
 }

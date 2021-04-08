@@ -109,3 +109,8 @@ void removeStock(std::vector<productClass>& v) {
  {
 	 return left.itemName[0] < right.itemName[0];
  }
+
+ bool compareStock(const productClass& left, const productClass& right)
+ {
+	 return left.stock < right.stock;
+ }

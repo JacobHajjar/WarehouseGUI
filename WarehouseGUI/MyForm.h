@@ -330,6 +330,7 @@ namespace WarehouseGUI {
 			this->button3->TabIndex = 9;
 			this->button3->Text = L"Number";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button2
 			// 
@@ -485,7 +486,22 @@ private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	std::sort(products.begin(), products.end(), compareNames);
+	for (int i = 0; i < products.size(); i++) {
+		dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
+		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
+		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+	}
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::sort(products.begin(), products.end(), compareStock);
+	for (int i = 0; i < products.size(); i++) {
+		dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
+		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
+		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+	}
 }
 };
 }

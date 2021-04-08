@@ -100,6 +100,8 @@ namespace WarehouseGUI {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -115,8 +117,6 @@ namespace WarehouseGUI {
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -237,6 +237,30 @@ namespace WarehouseGUI {
 			this->panel2->Size = System::Drawing::Size(592, 393);
 			this->panel2->TabIndex = 1;
 			// 
+			// button7
+			// 
+			this->button7->BackColor = System::Drawing::Color::Gold;
+			this->button7->FlatAppearance->BorderSize = 0;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button7->Location = System::Drawing::Point(441, 97);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(138, 27);
+			this->button7->TabIndex = 13;
+			this->button7->Text = L"Save and Logout";
+			this->button7->UseVisualStyleBackColor = false;
+			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::LightGreen;
+			this->button6->FlatAppearance->BorderSize = 0;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button6->Location = System::Drawing::Point(485, 51);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(94, 27);
+			this->button6->TabIndex = 12;
+			this->button6->Text = L"Save";
+			this->button6->UseVisualStyleBackColor = false;
+			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
@@ -318,6 +342,7 @@ namespace WarehouseGUI {
 			this->button2->TabIndex = 8;
 			this->button2->Text = L"Name";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// label5
 			// 
@@ -399,30 +424,6 @@ namespace WarehouseGUI {
 			this->textBox3->Size = System::Drawing::Size(199, 30);
 			this->textBox3->TabIndex = 1;
 			// 
-			// button6
-			// 
-			this->button6->BackColor = System::Drawing::Color::LightGreen;
-			this->button6->FlatAppearance->BorderSize = 0;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button6->Location = System::Drawing::Point(485, 51);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(94, 27);
-			this->button6->TabIndex = 12;
-			this->button6->Text = L"Save";
-			this->button6->UseVisualStyleBackColor = false;
-			// 
-			// button7
-			// 
-			this->button7->BackColor = System::Drawing::Color::Gold;
-			this->button7->FlatAppearance->BorderSize = 0;
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button7->Location = System::Drawing::Point(441, 97);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(138, 27);
-			this->button7->TabIndex = 13;
-			this->button7->Text = L"Save and Logout";
-			this->button7->UseVisualStyleBackColor = false;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -482,6 +483,9 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 }
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 }
 };
 }

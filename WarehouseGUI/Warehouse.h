@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 
-//class of item to be stored in database
+//class of items in database
 class productClass {
 public:
 	int itemNum = 0;

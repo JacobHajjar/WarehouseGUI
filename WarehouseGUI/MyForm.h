@@ -10,7 +10,7 @@ namespace WarehouseGUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	std::vector<productClass> products;
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
@@ -21,9 +21,7 @@ namespace WarehouseGUI {
 		{
 			InitializeComponent();
 			panel2->Hide();
-			dataGridView1->Rows[0]->Cells[0]->Value = "Apple";
-			dataGridView1->Rows->Add(4);
-			dataGridView1->Rows[1]->Cells[0]->Value = "Apple";
+			dataGridView1->Rows->Add();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -67,6 +65,8 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button6;
 
 
 
@@ -100,6 +100,11 @@ namespace WarehouseGUI {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -110,11 +115,8 @@ namespace WarehouseGUI {
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -217,6 +219,8 @@ namespace WarehouseGUI {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::Control;
+			this->panel2->Controls->Add(this->button7);
+			this->panel2->Controls->Add(this->button6);
 			this->panel2->Controls->Add(this->dataGridView1);
 			this->panel2->Controls->Add(this->button4);
 			this->panel2->Controls->Add(this->button3);
@@ -232,6 +236,50 @@ namespace WarehouseGUI {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(592, 393);
 			this->panel2->TabIndex = 1;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->Column1,
+					this->Column2, this->Column3, this->Column4
+			});
+			this->dataGridView1->Location = System::Drawing::Point(15, 133);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(564, 245);
+			this->dataGridView1->TabIndex = 11;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Product Name";
+			this->Column1->MinimumWidth = 6;
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 125;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Product ID";
+			this->Column2->MinimumWidth = 6;
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 125;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"# of Stock";
+			this->Column3->MinimumWidth = 6;
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 125;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Aisle Location";
+			this->Column4->MinimumWidth = 6;
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 125;
 			// 
 			// button4
 			// 
@@ -351,49 +399,29 @@ namespace WarehouseGUI {
 			this->textBox3->Size = System::Drawing::Size(199, 30);
 			this->textBox3->TabIndex = 1;
 			// 
-			// dataGridView1
+			// button6
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
-				this->Column1,
-					this->Column2, this->Column3, this->Column4
-			});
-			this->dataGridView1->Location = System::Drawing::Point(15, 133);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(564, 245);
-			this->dataGridView1->TabIndex = 11;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
+			this->button6->BackColor = System::Drawing::Color::LightGreen;
+			this->button6->FlatAppearance->BorderSize = 0;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button6->Location = System::Drawing::Point(485, 51);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(94, 27);
+			this->button6->TabIndex = 12;
+			this->button6->Text = L"Save";
+			this->button6->UseVisualStyleBackColor = false;
 			// 
-			// Column1
+			// button7
 			// 
-			this->Column1->HeaderText = L"Product Name";
-			this->Column1->MinimumWidth = 6;
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 125;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Product ID";
-			this->Column2->MinimumWidth = 6;
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 125;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"# of Stock";
-			this->Column3->MinimumWidth = 6;
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 125;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Aisle Location";
-			this->Column4->MinimumWidth = 6;
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 125;
+			this->button7->BackColor = System::Drawing::Color::Gold;
+			this->button7->FlatAppearance->BorderSize = 0;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button7->Location = System::Drawing::Point(441, 97);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(138, 27);
+			this->button7->TabIndex = 13;
+			this->button7->Text = L"Save and Logout";
+			this->button7->UseVisualStyleBackColor = false;
 			// 
 			// MyForm
 			// 
@@ -406,6 +434,7 @@ namespace WarehouseGUI {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
 			this->Text = L"Omni-Warehouse";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
@@ -430,9 +459,18 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
 	panel1->Hide();
 	panel2->Show();
+	products = readDatabase();
+	for (int i = 0; i < products.size(); i++) {
+		
+		dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
+		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
+		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		dataGridView1->Rows->Add();
+	}
+	
 
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -440,6 +478,10 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	panel1->Show();
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+}
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }

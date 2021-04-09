@@ -358,6 +358,7 @@ namespace WarehouseGUI {
 			// button5
 			// 
 			this->button5->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button5->Enabled = false;
 			this->button5->FlatAppearance->BorderSize = 0;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
@@ -369,6 +370,7 @@ namespace WarehouseGUI {
 			this->button5->Text = L"Search";
 			this->button5->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// label6
 			// 
@@ -391,6 +393,7 @@ namespace WarehouseGUI {
 			this->checkBox2->TabIndex = 4;
 			this->checkBox2->Text = L"number";
 			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox2_CheckedChanged);
 			// 
 			// checkBox1
 			// 
@@ -403,6 +406,7 @@ namespace WarehouseGUI {
 			this->checkBox1->TabIndex = 3;
 			this->checkBox1->Text = L"name";
 			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox1_CheckedChanged);
 			// 
 			// label7
 			// 
@@ -502,6 +506,31 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
 		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 	}
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if ((checkBox1->Checked) && (checkBox2->Checked == false)) {
+		button5->Enabled = true;
+	}
+	else if ((checkBox2->Checked) && (checkBox1->Checked == false)) {
+		button5->Enabled = true;
+	}
+	else {
+		button5->Enabled = false;
+	}
+}
+private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if ((checkBox1->Checked) && (checkBox2->Checked == false)) {
+		button5->Enabled = true;
+	}
+	else if ((checkBox2->Checked) && (checkBox1->Checked == false)) {
+		button5->Enabled = true;
+	}
+	else {
+		button5->Enabled = false;
+	}
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }

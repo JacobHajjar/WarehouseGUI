@@ -530,7 +530,15 @@ private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::E
 	}
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (checkBox1->Enabled) {
 
+	}
+	else if (checkBox2->Enabled) {
+
+	}
+	else {
+
+	}
 }
 };
 }

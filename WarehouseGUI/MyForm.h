@@ -71,7 +71,9 @@ namespace WarehouseGUI {
 
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button4;
+
 
 
 
@@ -124,7 +126,8 @@ namespace WarehouseGUI {
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -229,7 +232,9 @@ namespace WarehouseGUI {
 			this->panel2->BackColor = System::Drawing::SystemColors::Control;
 			this->panel2->Controls->Add(this->button6);
 			this->panel2->Controls->Add(this->button8);
+			this->panel2->Controls->Add(this->button7);
 			this->panel2->Controls->Add(this->dataGridView1);
+			this->panel2->Controls->Add(this->button4);
 			this->panel2->Controls->Add(this->button3);
 			this->panel2->Controls->Add(this->button2);
 			this->panel2->Controls->Add(this->label5);
@@ -426,12 +431,31 @@ namespace WarehouseGUI {
 			this->textBox3->TabIndex = 1;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
 			// 
-			// panel3
+			// button4
 			// 
-			this->panel3->Location = System::Drawing::Point(181, 119);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(350, 153);
-			this->panel3->TabIndex = 2;
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button4->FlatAppearance->BorderSize = 0;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button4->Location = System::Drawing::Point(504, 97);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 27);
+			this->button4->TabIndex = 10;
+			this->button4->Text = L"Logout";
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
+			// button7
+			// 
+			this->button7->BackColor = System::Drawing::Color::Gold;
+			this->button7->FlatAppearance->BorderSize = 0;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button7->Location = System::Drawing::Point(376, 97);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(124, 27);
+			this->button7->TabIndex = 13;
+			this->button7->Text = L"Save and Logout";
+			this->button7->UseVisualStyleBackColor = false;
 			// 
 			// MyForm
 			// 
@@ -439,9 +463,8 @@ namespace WarehouseGUI {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(702, 433);
-			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
 			this->Text = L"Omni-Warehouse";

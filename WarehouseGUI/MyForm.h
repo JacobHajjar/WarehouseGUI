@@ -22,6 +22,7 @@ namespace WarehouseGUI {
 			InitializeComponent();
 			panel2->Hide();
 			dataGridView1->Rows->Add();
+			checkBox1->Checked = true;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -273,7 +274,7 @@ namespace WarehouseGUI {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(564, 245);
+			this->dataGridView1->Size = System::Drawing::Size(564, 119);
 			this->dataGridView1->TabIndex = 11;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
@@ -328,7 +329,7 @@ namespace WarehouseGUI {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 9;
-			this->button3->Text = L"Number";
+			this->button3->Text = L"Stock";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
@@ -389,9 +390,9 @@ namespace WarehouseGUI {
 			this->checkBox2->ForeColor = System::Drawing::Color::Black;
 			this->checkBox2->Location = System::Drawing::Point(328, 11);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(100, 29);
+			this->checkBox2->Size = System::Drawing::Size(53, 29);
 			this->checkBox2->TabIndex = 4;
-			this->checkBox2->Text = L"number";
+			this->checkBox2->Text = L"ID";
 			this->checkBox2->UseVisualStyleBackColor = true;
 			this->checkBox2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox2_CheckedChanged);
 			// 
@@ -428,6 +429,7 @@ namespace WarehouseGUI {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(199, 30);
 			this->textBox3->TabIndex = 1;
+			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
 			// 
 			// MyForm
 			// 
@@ -508,37 +510,63 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if ((checkBox1->Checked) && (checkBox2->Checked == false)) {
+	if (checkBox1->Checked) {
+		checkBox2->Checked = false;
 		button5->Enabled = true;
 	}
-	else if ((checkBox2->Checked) && (checkBox1->Checked == false)) {
-		button5->Enabled = true;
+	else if (checkBox1->Checked && checkBox2->Checked) {
+		button5->Enabled = false;
 	}
 	else {
 		button5->Enabled = false;
 	}
 }
 private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if ((checkBox1->Checked) && (checkBox2->Checked == false)) {
+	if (checkBox2->Checked) {
+		checkBox1->Checked = false;
 		button5->Enabled = true;
 	}
-	else if ((checkBox2->Checked) && (checkBox1->Checked == false)) {
-		button5->Enabled = true;
+	else if (checkBox1->Checked && checkBox2->Checked) {
+		button5->Enabled = false;
 	}
 	else {
 		button5->Enabled = false;
 	}
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (checkBox1->Enabled) {
-
+	bool found = false;
+	if (checkBox1->Checked) {
+		
+		for (int i = 0; i < products.size(); i++) {
+			if (textBox3->Text == dataGridView1->Rows[i]->Cells[0]->Value->ToString()) {
+			dataGridView1->CurrentCell = dataGridView1->Rows[i]->Cells[0];
+			dataGridView1->FirstDisplayedScrollingRowIndex = i;
+			found = true;
+			}
+		}
+		if (found == false) {
+			MessageBox::Show("Product not found in Warehouse or typed incorrectly", "System Message",
+				MessageBoxButtons::OK);
+		}
 	}
-	else if (checkBox2->Enabled) {
-
+	else if (checkBox2->Checked) {
+		for (int i = 0; i < products.size(); i++) {
+			if (textBox3->Text == dataGridView1->Rows[i]->Cells[1]->Value->ToString()) {
+				dataGridView1->CurrentCell = dataGridView1->Rows[i]->Cells[1];
+				dataGridView1->FirstDisplayedScrollingRowIndex = i;
+				found = true;
+			}
+		}
+		if (found == false) {
+			MessageBox::Show("Product not found in Warehouse or typed incorrectly", "System Message",
+				MessageBoxButtons::OK);
+		}
 	}
 	else {
 
 	}
+}
+private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

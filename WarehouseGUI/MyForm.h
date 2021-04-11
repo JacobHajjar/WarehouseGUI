@@ -24,11 +24,13 @@ namespace WarehouseGUI {
 			panel2->Hide();
 			panel3->Hide();
 			panel4->Hide();
+			panel5->Hide();
 			users = readUsers();
 			products = readDatabase();
 			dataGridView1->Rows->Add(products.size());
-			
+			dataGridView3->Rows->Add(products.size());
 			checkBox1->Checked = true;
+			checkBox4->Checked = true;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -116,6 +118,23 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::Button^ button12;
 	private: System::Windows::Forms::Button^ button13;
 	private: System::Windows::Forms::ErrorProvider^ errorProvider1;
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::DataGridView^ dataGridView3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
+	private: System::Windows::Forms::Button^ button16;
+	private: System::Windows::Forms::Button^ button17;
+	private: System::Windows::Forms::Button^ button18;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Button^ button19;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::CheckBox^ checkBox3;
+	private: System::Windows::Forms::CheckBox^ checkBox4;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -196,13 +215,30 @@ namespace WarehouseGUI {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column7 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
 			this->errorProvider1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->button16 = (gcnew System::Windows::Forms::Button());
+			this->button17 = (gcnew System::Windows::Forms::Button());
+			this->button18 = (gcnew System::Windows::Forms::Button());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->button19 = (gcnew System::Windows::Forms::Button());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -210,6 +246,8 @@ namespace WarehouseGUI {
 			this->panel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->BeginInit();
+			this->panel5->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -358,7 +396,7 @@ namespace WarehouseGUI {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label5->Location = System::Drawing::Point(10, 99);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(63, 20);
+			this->label5->Size = System::Drawing::Size(80, 25);
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"Sort by:";
 			// 
@@ -385,7 +423,7 @@ namespace WarehouseGUI {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label6->Location = System::Drawing::Point(255, 13);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(23, 20);
+			this->label6->Size = System::Drawing::Size(29, 25);
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"or";
 			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
@@ -397,7 +435,7 @@ namespace WarehouseGUI {
 			this->checkBox2->ForeColor = System::Drawing::Color::Black;
 			this->checkBox2->Location = System::Drawing::Point(284, 12);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(45, 24);
+			this->checkBox2->Size = System::Drawing::Size(53, 29);
 			this->checkBox2->TabIndex = 4;
 			this->checkBox2->Text = L"ID";
 			this->checkBox2->UseVisualStyleBackColor = true;
@@ -410,7 +448,7 @@ namespace WarehouseGUI {
 			this->checkBox1->ForeColor = System::Drawing::Color::Black;
 			this->checkBox1->Location = System::Drawing::Point(181, 12);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(68, 24);
+			this->checkBox1->Size = System::Drawing::Size(83, 29);
 			this->checkBox1->TabIndex = 3;
 			this->checkBox1->Text = L"name";
 			this->checkBox1->UseVisualStyleBackColor = true;
@@ -422,7 +460,7 @@ namespace WarehouseGUI {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label7->Location = System::Drawing::Point(10, 11);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(165, 20);
+			this->label7->Size = System::Drawing::Size(204, 25);
 			this->label7->TabIndex = 2;
 			this->label7->Text = L"Search for product by:";
 			// 
@@ -434,7 +472,7 @@ namespace WarehouseGUI {
 			this->textBox3->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
 			this->textBox3->Location = System::Drawing::Point(15, 50);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(199, 26);
+			this->textBox3->Size = System::Drawing::Size(199, 30);
 			this->textBox3->TabIndex = 1;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
 			// 
@@ -491,7 +529,7 @@ namespace WarehouseGUI {
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label12->Location = System::Drawing::Point(206, 16);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(110, 20);
+			this->label12->Size = System::Drawing::Size(134, 25);
 			this->label12->TabIndex = 10;
 			this->label12->Text = L"Enter product:";
 			this->label12->Click += gcnew System::EventHandler(this, &MyForm::label12_Click);
@@ -530,7 +568,7 @@ namespace WarehouseGUI {
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label11->Location = System::Drawing::Point(394, 65);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(70, 20);
+			this->label11->Size = System::Drawing::Size(86, 25);
 			this->label11->TabIndex = 7;
 			this->label11->Text = L"Location";
 			// 
@@ -540,7 +578,7 @@ namespace WarehouseGUI {
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label10->Location = System::Drawing::Point(296, 65);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(50, 20);
+			this->label10->Size = System::Drawing::Size(62, 25);
 			this->label10->TabIndex = 6;
 			this->label10->Text = L"Stock";
 			// 
@@ -550,7 +588,7 @@ namespace WarehouseGUI {
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label9->Location = System::Drawing::Point(192, 65);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(26, 20);
+			this->label9->Size = System::Drawing::Size(31, 25);
 			this->label9->TabIndex = 5;
 			this->label9->Text = L"ID";
 			// 
@@ -560,7 +598,7 @@ namespace WarehouseGUI {
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label8->Location = System::Drawing::Point(61, 65);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(51, 20);
+			this->label8->Size = System::Drawing::Size(64, 25);
 			this->label8->TabIndex = 4;
 			this->label8->Text = L"Name";
 			// 
@@ -568,28 +606,28 @@ namespace WarehouseGUI {
 			// 
 			this->textBox7->Location = System::Drawing::Point(382, 93);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(110, 20);
+			this->textBox7->Size = System::Drawing::Size(110, 22);
 			this->textBox7->TabIndex = 3;
 			// 
 			// textBox6
 			// 
 			this->textBox6->Location = System::Drawing::Point(269, 93);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(110, 20);
+			this->textBox6->Size = System::Drawing::Size(110, 22);
 			this->textBox6->TabIndex = 2;
 			// 
 			// textBox5
 			// 
 			this->textBox5->Location = System::Drawing::Point(156, 93);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(110, 20);
+			this->textBox5->Size = System::Drawing::Size(110, 22);
 			this->textBox5->TabIndex = 1;
 			// 
 			// textBox4
 			// 
 			this->textBox4->Location = System::Drawing::Point(43, 93);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(110, 20);
+			this->textBox4->Size = System::Drawing::Size(110, 22);
 			this->textBox4->TabIndex = 0;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
@@ -634,7 +672,7 @@ namespace WarehouseGUI {
 			// 
 			this->textBox1->Location = System::Drawing::Point(143, 203);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(170, 20);
+			this->textBox1->Size = System::Drawing::Size(170, 22);
 			this->textBox1->TabIndex = 3;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
@@ -654,7 +692,7 @@ namespace WarehouseGUI {
 			this->textBox2->Location = System::Drawing::Point(143, 272);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->PasswordChar = '*';
-			this->textBox2->Size = System::Drawing::Size(170, 20);
+			this->textBox2->Size = System::Drawing::Size(170, 22);
 			this->textBox2->TabIndex = 5;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged_1);
 			// 
@@ -694,7 +732,7 @@ namespace WarehouseGUI {
 			this->label13->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->label13->Location = System::Drawing::Point(179, 373);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(103, 13);
+			this->label13->Size = System::Drawing::Size(133, 17);
 			this->label13->TabIndex = 7;
 			this->label13->Text = L"Create new account";
 			this->label13->Click += gcnew System::EventHandler(this, &MyForm::label13_Click);
@@ -710,56 +748,6 @@ namespace WarehouseGUI {
 			this->panel4->Size = System::Drawing::Size(468, 359);
 			this->panel4->TabIndex = 3;
 			// 
-			// dataGridView2
-			// 
-			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				this->Column5,
-					this->Column6, this->Column7
-			});
-			this->dataGridView2->Location = System::Drawing::Point(9, 10);
-			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->Size = System::Drawing::Size(449, 301);
-			this->dataGridView2->TabIndex = 0;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Username";
-			this->Column5->Name = L"Column5";
-			this->Column5->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->Column5->Width = 150;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Password";
-			this->Column6->Name = L"Column6";
-			this->Column6->Width = 150;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"Admin Access";
-			this->Column7->Name = L"Column7";
-			this->Column7->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->Column7->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
-			// 
-			// errorProvider1
-			// 
-			this->errorProvider1->ContainerControl = this;
-			// 
-			// button13
-			// 
-			this->button13->BackColor = System::Drawing::Color::RoyalBlue;
-			this->button13->FlatAppearance->BorderSize = 0;
-			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button13->ForeColor = System::Drawing::Color::White;
-			this->button13->Location = System::Drawing::Point(363, 319);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(92, 28);
-			this->button13->TabIndex = 2;
-			this->button13->Text = L"Return to Login";
-			this->button13->UseVisualStyleBackColor = false;
-			// 
 			// button12
 			// 
 			this->button12->BackColor = System::Drawing::Color::RoyalBlue;
@@ -774,12 +762,264 @@ namespace WarehouseGUI {
 			this->button12->UseVisualStyleBackColor = false;
 			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
 			// 
+			// button13
+			// 
+			this->button13->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button13->FlatAppearance->BorderSize = 0;
+			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button13->ForeColor = System::Drawing::Color::White;
+			this->button13->Location = System::Drawing::Point(363, 319);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(92, 28);
+			this->button13->TabIndex = 2;
+			this->button13->Text = L"Return to Login";
+			this->button13->UseVisualStyleBackColor = false;
+			this->button13->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+				this->Column5,
+					this->Column6, this->Column7
+			});
+			this->dataGridView2->Location = System::Drawing::Point(9, 10);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->Size = System::Drawing::Size(449, 301);
+			this->dataGridView2->TabIndex = 0;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Username";
+			this->Column5->MinimumWidth = 6;
+			this->Column5->Name = L"Column5";
+			this->Column5->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->Column5->Width = 150;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Password";
+			this->Column6->MinimumWidth = 6;
+			this->Column6->Name = L"Column6";
+			this->Column6->Width = 150;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Admin Access";
+			this->Column7->MinimumWidth = 6;
+			this->Column7->Name = L"Column7";
+			this->Column7->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->Column7->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
+			this->Column7->Width = 125;
+			// 
+			// errorProvider1
+			// 
+			this->errorProvider1->ContainerControl = this;
+			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::SystemColors::Control;
+			this->panel5->Controls->Add(this->dataGridView3);
+			this->panel5->Controls->Add(this->button16);
+			this->panel5->Controls->Add(this->button17);
+			this->panel5->Controls->Add(this->button18);
+			this->panel5->Controls->Add(this->label14);
+			this->panel5->Controls->Add(this->button19);
+			this->panel5->Controls->Add(this->label15);
+			this->panel5->Controls->Add(this->checkBox3);
+			this->panel5->Controls->Add(this->checkBox4);
+			this->panel5->Controls->Add(this->label16);
+			this->panel5->Controls->Add(this->textBox8);
+			this->panel5->Location = System::Drawing::Point(55, 20);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(713, 481);
+			this->panel5->TabIndex = 15;
+			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->AllowUserToAddRows = false;
+			this->dataGridView3->AllowUserToDeleteRows = false;
+			this->dataGridView3->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->dataGridViewTextBoxColumn1,
+					this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn5
+			});
+			this->dataGridView3->Location = System::Drawing::Point(15, 133);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->RowHeadersWidth = 51;
+			this->dataGridView3->RowTemplate->Height = 24;
+			this->dataGridView3->Size = System::Drawing::Size(683, 336);
+			this->dataGridView3->TabIndex = 11;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this->dataGridViewTextBoxColumn1->HeaderText = L"Product Name";
+			this->dataGridViewTextBoxColumn1->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			this->dataGridViewTextBoxColumn1->Width = 125;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this->dataGridViewTextBoxColumn2->HeaderText = L"Product ID";
+			this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			this->dataGridViewTextBoxColumn2->Width = 125;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this->dataGridViewTextBoxColumn3->HeaderText = L"# of Stock";
+			this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
+			this->dataGridViewTextBoxColumn3->Width = 125;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this->dataGridViewTextBoxColumn4->HeaderText = L"Aisle Location";
+			this->dataGridViewTextBoxColumn4->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			this->dataGridViewTextBoxColumn4->Width = 125;
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this->dataGridViewTextBoxColumn5->HeaderText = L"Comments";
+			this->dataGridViewTextBoxColumn5->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
+			this->dataGridViewTextBoxColumn5->Width = 125;
+			// 
+			// button16
+			// 
+			this->button16->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button16->FlatAppearance->BorderSize = 0;
+			this->button16->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button16->Location = System::Drawing::Point(623, 15);
+			this->button16->Name = L"button16";
+			this->button16->Size = System::Drawing::Size(75, 27);
+			this->button16->TabIndex = 10;
+			this->button16->Text = L"Logout";
+			this->button16->UseVisualStyleBackColor = false;
+			this->button16->Click += gcnew System::EventHandler(this, &MyForm::button16_Click);
+			// 
+			// button17
+			// 
+			this->button17->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button17->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button17->ForeColor = System::Drawing::Color::White;
+			this->button17->Location = System::Drawing::Point(200, 99);
+			this->button17->Name = L"button17";
+			this->button17->Size = System::Drawing::Size(100, 28);
+			this->button17->TabIndex = 9;
+			this->button17->Text = L"Stock";
+			this->button17->UseVisualStyleBackColor = false;
+			this->button17->Click += gcnew System::EventHandler(this, &MyForm::button17_Click);
+			// 
+			// button18
+			// 
+			this->button18->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button18->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button18->ForeColor = System::Drawing::Color::White;
+			this->button18->Location = System::Drawing::Point(87, 99);
+			this->button18->Name = L"button18";
+			this->button18->Size = System::Drawing::Size(100, 28);
+			this->button18->TabIndex = 8;
+			this->button18->Text = L"Name";
+			this->button18->UseVisualStyleBackColor = false;
+			this->button18->Click += gcnew System::EventHandler(this, &MyForm::button18_Click);
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label14->Location = System::Drawing::Point(10, 99);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(80, 25);
+			this->label14->TabIndex = 7;
+			this->label14->Text = L"Sort by:";
+			// 
+			// button19
+			// 
+			this->button19->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button19->Enabled = false;
+			this->button19->FlatAppearance->BorderSize = 0;
+			this->button19->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->button19->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button19->Location = System::Drawing::Point(212, 50);
+			this->button19->Name = L"button19";
+			this->button19->Size = System::Drawing::Size(88, 26);
+			this->button19->TabIndex = 6;
+			this->button19->Text = L"Search";
+			this->button19->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->button19->UseVisualStyleBackColor = false;
+			this->button19->Click += gcnew System::EventHandler(this, &MyForm::button19_Click);
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label15->Location = System::Drawing::Point(255, 13);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(29, 25);
+			this->label15->TabIndex = 5;
+			this->label15->Text = L"or";
+			// 
+			// checkBox3
+			// 
+			this->checkBox3->AutoSize = true;
+			this->checkBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->checkBox3->ForeColor = System::Drawing::Color::Black;
+			this->checkBox3->Location = System::Drawing::Point(284, 12);
+			this->checkBox3->Name = L"checkBox3";
+			this->checkBox3->Size = System::Drawing::Size(53, 29);
+			this->checkBox3->TabIndex = 4;
+			this->checkBox3->Text = L"ID";
+			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox3_CheckedChanged);
+			// 
+			// checkBox4
+			// 
+			this->checkBox4->AutoSize = true;
+			this->checkBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->checkBox4->ForeColor = System::Drawing::Color::Black;
+			this->checkBox4->Location = System::Drawing::Point(181, 12);
+			this->checkBox4->Name = L"checkBox4";
+			this->checkBox4->Size = System::Drawing::Size(83, 29);
+			this->checkBox4->TabIndex = 3;
+			this->checkBox4->Text = L"name";
+			this->checkBox4->UseVisualStyleBackColor = true;
+			this->checkBox4->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox4_CheckedChanged);
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label16->Location = System::Drawing::Point(10, 11);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(204, 25);
+			this->label16->TabIndex = 2;
+			this->label16->Text = L"Search for product by:";
+			// 
+			// textBox8
+			// 
+			this->textBox8->BackColor = System::Drawing::SystemColors::HighlightText;
+			this->textBox8->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->textBox8->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox8->Location = System::Drawing::Point(15, 50);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(199, 30);
+			this->textBox8->TabIndex = 1;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(822, 513);
+			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel1);
@@ -798,6 +1038,9 @@ namespace WarehouseGUI {
 			this->panel4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->EndInit();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -817,24 +1060,55 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { //login button
-	
-	panel1->Hide();
-	panel2->Show();
-	textBox1->Text = "";
-	textBox2->Text = "";
-	for (int i = 0; i < products.size(); i++) {
-		dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
-		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
-		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock) {
-			dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+	bool loginCorrect = false;
+	for (int i = 0; i < users.size(); i++) {
+		if ((msclr::interop::marshal_as<std::string>(textBox1->Text) ==
+			users[i].username) && (msclr::interop::marshal_as<std::string>(textBox2->Text) == users[i].password) && (users[i].isAdmin == 1)) { //admin acc
+			panel1->Hide();
+			panel2->Show();
+			textBox1->Text = "";
+			textBox2->Text = "";
+			for (int i = 0; i < products.size(); i++) {
+				dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+				dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
+				dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
+				dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+				if (products[i].stock < minStock) {
+					dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+				}
+				else {
+					dataGridView1->Rows[i]->Cells[4]->Value = "";
+				}
+			}
+			loginCorrect = true;
+			break;
 		}
-		else {
-			dataGridView1->Rows[i]->Cells[4]->Value = "";
+		else if ((msclr::interop::marshal_as<std::string>(textBox1->Text) ==
+			users[i].username) && (msclr::interop::marshal_as<std::string>(textBox2->Text) == users[i].password) && (users[i].isAdmin == 0)) { //user acc
+			panel1->Hide();
+			panel5->Show();
+			textBox1->Text = "";
+			textBox2->Text = "";
+			for (int i = 0; i < products.size(); i++) {
+				dataGridView3->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+				dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
+				dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
+				dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+				if (products[i].stock < minStock) {
+					dataGridView3->Rows[i]->Cells[4]->Value = "Low Stock";
+				}
+				else {
+					dataGridView3->Rows[i]->Cells[4]->Value = "";
+				}
+			}
+			loginCorrect = true;
+			break;
 		}
 	}
-	
+	if (loginCorrect == false) {
+		MessageBox::Show("User not found or login typed incorrectly", "Warning",
+			MessageBoxButtons::OK);
+	}
 
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) { //logout without saving button
@@ -932,8 +1206,6 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 			MessageBox::Show("Product not found in Warehouse or typed incorrectly", "System Message",
 				MessageBoxButtons::OK);
 		}
-	}
-	else {
 	}
 }
 private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -1119,34 +1391,52 @@ private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e) { //create account
 	users = readUsers();
-
-	if (textBox1->Text == "Administrator" & textBox2->Text == "Admin123*") {
-		panel1->Hide();
-		panel4->Show();
-		textBox1->Text = "";
-		textBox2->Text = "";
-		for (int i = 0; i < users.size(); i++) {
-			dataGridView2->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(users[i].username);
-			dataGridView2->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(users[i].password);
-			if (users[i].isAdmin == 1) {
-				dataGridView2->Rows[i]->Cells[2]->Value = true;
+	bool isCorrect = true;
+	for (int i = 0; i < users.size(); i++) {
+		if ((msclr::interop::marshal_as<std::string>(textBox1->Text) == 
+			users[i].username) && (msclr::interop::marshal_as<std::string>(textBox2->Text) == users[i].password) && (users[i].isAdmin == 1)) {
+			panel1->Hide();
+			panel4->Show();
+			textBox1->Text = "";
+			textBox2->Text = "";
+			dataGridView2->Rows->Add(users.size());
+			for (int i = 0; i < users.size(); i++) {
+				dataGridView2->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(users[i].username);
+				dataGridView2->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(users[i].password);
+				if (users[i].isAdmin == 1) {
+					dataGridView2->Rows[i]->Cells["Column7"]->Value = true;
+				}
+				else {
+					dataGridView2->Rows[i]->Cells["Column7"]->Value = false;
+				}
 			}
-			else {
-				dataGridView2->Rows[i]->Cells[2]->Value = false;
-			}
-
+			isCorrect = true;
+			break;
+		}
+		else if ((msclr::interop::marshal_as<std::string>(textBox1->Text) ==
+			users[i].username) && (msclr::interop::marshal_as<std::string>(textBox2->Text) == users[i].password) && (users[i].isAdmin == 0))
+		{
+			MessageBox::Show("You do not have access to manage user accounts", "Warning",
+				MessageBoxButtons::OK);
+			isCorrect = true;
+			break;
+		}
+		else {
+			isCorrect = false;
 		}
 	}
-	else {
-		MessageBox::Show("Enter the Administrator's correct login details to manage user accounts", "System Message",
+	if (isCorrect == false) {
+		MessageBox::Show("You must enter an Administrator's correct login details to manage user accounts", "System Message",
 			MessageBoxButtons::OK);
 	}
+
 }
 private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) { // save accounts
 	std::ofstream outFile("users.txt");
+	bool saveSuccess = true;
 	for (int i = 0; i < dataGridView2->Rows->Count; i++) {
 		int isAdmin = 0;
-		if (dataGridView2->Rows[i]->Cells[2]->Value == true) {
+		if (System::Convert::ToBoolean(dataGridView2->Rows[i]->Cells["Column7"]->Value) == true) {
 			isAdmin = 1;
 		}
 		if ((dataGridView2->Rows[i]->Cells[0]->Value != nullptr) && (dataGridView2->Rows[i]->Cells[1]->Value != nullptr)) {
@@ -1154,8 +1444,114 @@ private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ 
 				<< msclr::interop::marshal_as<std::string>(dataGridView2->Rows[i]->Cells[1]->Value->ToString()) << " "
 				<< isAdmin << std::endl;
 		}
+		else if (((dataGridView2->Rows[i]->Cells[0]->Value != nullptr) && (dataGridView2->Rows[i]->Cells[1]->Value == nullptr)) || 
+			((dataGridView2->Rows[i]->Cells[0]->Value == nullptr) && (dataGridView2->Rows[i]->Cells[1]->Value != nullptr))) {
+			saveSuccess = false;
+		}
 		
 	}
+	if (saveSuccess == true) {
+		MessageBox::Show("Accounts have been saved successfully", "System Message",
+			MessageBoxButtons::OK);
+	}
+	else {
+		MessageBox::Show("Some fields must not be blank", "Warning",
+			MessageBoxButtons::OK);
+	}
+	users = readUsers();
+}
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel4->Hide();
+	panel1->Show();
+	dataGridView2->Rows->Clear();
+}
+private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::sort(products.begin(), products.end(), compareStock);
+	for (int i = 0; i < products.size(); i++) {
+		dataGridView3->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
+		dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
+		dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		if (products[i].stock < minStock) {
+			dataGridView3->Rows[i]->Cells[4]->Value = "Low Stock";
+		}
+		else {
+			dataGridView3->Rows[i]->Cells[4]->Value = "";
+		}
+	}
+}
+private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::sort(products.begin(), products.end(), compareNames);
+	for (int i = 0; i < products.size(); i++) {
+		dataGridView3->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
+		dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
+		dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		if (products[i].stock < minStock) {
+			dataGridView3->Rows[i]->Cells[4]->Value = "Low Stock";
+		}
+		else {
+			dataGridView3->Rows[i]->Cells[4]->Value = "";
+		}
+	}
+}
+private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) { //search button employee
+	bool found = false;
+	if (checkBox4->Checked) { //search by name
+
+		for (int i = 0; i < products.size(); i++) {
+			if (textBox8->Text == dataGridView3->Rows[i]->Cells[0]->Value->ToString()) {
+				dataGridView3->CurrentCell = dataGridView3->Rows[i]->Cells[0];
+				dataGridView3->FirstDisplayedScrollingRowIndex = i;
+				found = true;
+			}
+		}
+		if (found == false) {
+			MessageBox::Show("Product not found in Warehouse or typed incorrectly", "System Message",
+				MessageBoxButtons::OK);
+		}
+	}
+	else if (checkBox3->Checked) { //search by number
+		for (int i = 0; i < products.size(); i++) {
+			if (textBox8->Text == dataGridView3->Rows[i]->Cells[1]->Value->ToString()) {
+				dataGridView3->CurrentCell = dataGridView3->Rows[i]->Cells[1];
+				dataGridView3->FirstDisplayedScrollingRowIndex = i;
+				found = true;
+			}
+		}
+		if (found == false) {
+			MessageBox::Show("Product not found in Warehouse or typed incorrectly", "System Message",
+				MessageBoxButtons::OK);
+		}
+	}
+}
+private: System::Void checkBox4_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (checkBox4->Checked) {
+		checkBox3->Checked = false;
+		button19->Enabled = true;
+	}
+	else if (checkBox4->Checked && checkBox3->Checked) {
+		button19->Enabled = false;
+	}
+	else {
+		button19->Enabled = false;
+	}
+}
+private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (checkBox3->Checked) {
+		checkBox4->Checked = false;
+		button19->Enabled = true;
+	}
+	else if (checkBox4->Checked && checkBox3->Checked) {
+		button19->Enabled = false;
+	}
+	else {
+		button19->Enabled = false;
+	}
+}
+private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel5->Hide();
+	panel1->Show();
 }
 };
 }

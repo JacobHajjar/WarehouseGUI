@@ -58,7 +58,6 @@
 	 std::string uData;
 	 int numOfAttributes = 3;
 	 int i = 1;
-	 int j = 0;
 
 	 while (inFile >> uData) {
 		 switch (i) {
@@ -75,7 +74,7 @@
 			 break;
 		 }
 		 if (i == numOfAttributes) {
-			 i = 1;
+			 i = 0;
 			 users.push_back(user);
 		 }
 		 i++;

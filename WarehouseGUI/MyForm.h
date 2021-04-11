@@ -832,7 +832,7 @@ namespace WarehouseGUI {
 			this->panel5->Controls->Add(this->checkBox4);
 			this->panel5->Controls->Add(this->label16);
 			this->panel5->Controls->Add(this->textBox8);
-			this->panel5->Location = System::Drawing::Point(55, 20);
+			this->panel5->Location = System::Drawing::Point(55, 22);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(713, 481);
 			this->panel5->TabIndex = 15;
@@ -849,16 +849,19 @@ namespace WarehouseGUI {
 			});
 			this->dataGridView3->Location = System::Drawing::Point(15, 133);
 			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->ReadOnly = true;
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
 			this->dataGridView3->Size = System::Drawing::Size(683, 336);
 			this->dataGridView3->TabIndex = 11;
+			this->dataGridView3->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView3_CellContentClick);
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
 			this->dataGridViewTextBoxColumn1->HeaderText = L"Product Name";
 			this->dataGridViewTextBoxColumn1->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			this->dataGridViewTextBoxColumn1->ReadOnly = true;
 			this->dataGridViewTextBoxColumn1->Width = 125;
 			// 
 			// dataGridViewTextBoxColumn2
@@ -866,6 +869,7 @@ namespace WarehouseGUI {
 			this->dataGridViewTextBoxColumn2->HeaderText = L"Product ID";
 			this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			this->dataGridViewTextBoxColumn2->ReadOnly = true;
 			this->dataGridViewTextBoxColumn2->Width = 125;
 			// 
 			// dataGridViewTextBoxColumn3
@@ -873,6 +877,7 @@ namespace WarehouseGUI {
 			this->dataGridViewTextBoxColumn3->HeaderText = L"# of Stock";
 			this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
+			this->dataGridViewTextBoxColumn3->ReadOnly = true;
 			this->dataGridViewTextBoxColumn3->Width = 125;
 			// 
 			// dataGridViewTextBoxColumn4
@@ -880,6 +885,7 @@ namespace WarehouseGUI {
 			this->dataGridViewTextBoxColumn4->HeaderText = L"Aisle Location";
 			this->dataGridViewTextBoxColumn4->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			this->dataGridViewTextBoxColumn4->ReadOnly = true;
 			this->dataGridViewTextBoxColumn4->Width = 125;
 			// 
 			// dataGridViewTextBoxColumn5
@@ -887,6 +893,7 @@ namespace WarehouseGUI {
 			this->dataGridViewTextBoxColumn5->HeaderText = L"Comments";
 			this->dataGridViewTextBoxColumn5->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
+			this->dataGridViewTextBoxColumn5->ReadOnly = true;
 			this->dataGridViewTextBoxColumn5->Width = 125;
 			// 
 			// button16
@@ -1552,6 +1559,8 @@ private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::E
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel5->Hide();
 	panel1->Show();
+}
+private: System::Void dataGridView3_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }

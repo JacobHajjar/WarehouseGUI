@@ -699,6 +699,7 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { //login button
+	
 	panel1->Hide();
 	panel2->Show();
 	for (int i = 0; i < products.size(); i++) {

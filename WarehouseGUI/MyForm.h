@@ -11,6 +11,7 @@ namespace WarehouseGUI {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	std::vector<productClass> products;
+	std::vector<userClass> users;
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
@@ -22,9 +23,11 @@ namespace WarehouseGUI {
 			InitializeComponent();
 			panel2->Hide();
 			panel3->Hide();
+			panel4->Hide();
+			users = readUsers();
 			products = readDatabase();
 			dataGridView1->Rows->Add(products.size());
-	
+			
 			checkBox1->Checked = true;
 			//
 			//TODO: Add the constructor code here
@@ -104,6 +107,17 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Notes;
 	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ Column7;
+	private: System::Windows::Forms::Button^ button12;
+	private: System::Windows::Forms::Button^ button13;
+	private: System::Windows::Forms::ErrorProvider^ errorProvider1;
+	private: System::ComponentModel::IContainer^ components;
+
 
 
 
@@ -128,7 +142,7 @@ namespace WarehouseGUI {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -137,8 +151,10 @@ namespace WarehouseGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -178,11 +194,22 @@ namespace WarehouseGUI {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
+			this->errorProvider1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
+			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel3->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->panel4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -205,6 +232,19 @@ namespace WarehouseGUI {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(713, 481);
 			this->panel2->TabIndex = 1;
+			// 
+			// button8
+			// 
+			this->button8->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button8->ForeColor = System::Drawing::Color::White;
+			this->button8->Location = System::Drawing::Point(542, 53);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(156, 28);
+			this->button8->TabIndex = 14;
+			this->button8->Text = L"Add / Remove Stock";
+			this->button8->UseVisualStyleBackColor = false;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
 			// 
 			// button7
 			// 
@@ -635,6 +675,7 @@ namespace WarehouseGUI {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->Controls->Add(this->label13);
 			this->panel1->Controls->Add(this->label3);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->textBox2);
@@ -642,23 +683,96 @@ namespace WarehouseGUI {
 			this->panel1->Controls->Add(this->textBox1);
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Location = System::Drawing::Point(185, 83);
+			this->panel1->Location = System::Drawing::Point(185, 62);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(449, 375);
+			this->panel1->Size = System::Drawing::Size(449, 427);
 			this->panel1->TabIndex = 0;
 			// 
-			// button8
+			// label13
 			// 
-			this->button8->BackColor = System::Drawing::Color::RoyalBlue;
-			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button8->ForeColor = System::Drawing::Color::White;
-			this->button8->Location = System::Drawing::Point(542, 53);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(156, 28);
-			this->button8->TabIndex = 14;
-			this->button8->Text = L"Add / Remove Stock";
-			this->button8->UseVisualStyleBackColor = false;
-			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			this->label13->AutoSize = true;
+			this->label13->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label13->Location = System::Drawing::Point(179, 373);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(103, 13);
+			this->label13->TabIndex = 7;
+			this->label13->Text = L"Create new account";
+			this->label13->Click += gcnew System::EventHandler(this, &MyForm::label13_Click);
+			// 
+			// panel4
+			// 
+			this->panel4->BackColor = System::Drawing::SystemColors::Control;
+			this->panel4->Controls->Add(this->button12);
+			this->panel4->Controls->Add(this->button13);
+			this->panel4->Controls->Add(this->dataGridView2);
+			this->panel4->Location = System::Drawing::Point(176, 73);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(468, 359);
+			this->panel4->TabIndex = 3;
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+				this->Column5,
+					this->Column6, this->Column7
+			});
+			this->dataGridView2->Location = System::Drawing::Point(9, 10);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->Size = System::Drawing::Size(449, 301);
+			this->dataGridView2->TabIndex = 0;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Username";
+			this->Column5->Name = L"Column5";
+			this->Column5->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->Column5->Width = 150;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Password";
+			this->Column6->Name = L"Column6";
+			this->Column6->Width = 150;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Admin Access";
+			this->Column7->Name = L"Column7";
+			this->Column7->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->Column7->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
+			// 
+			// errorProvider1
+			// 
+			this->errorProvider1->ContainerControl = this;
+			// 
+			// button13
+			// 
+			this->button13->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button13->FlatAppearance->BorderSize = 0;
+			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button13->ForeColor = System::Drawing::Color::White;
+			this->button13->Location = System::Drawing::Point(363, 319);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(92, 28);
+			this->button13->TabIndex = 2;
+			this->button13->Text = L"Return to Login";
+			this->button13->UseVisualStyleBackColor = false;
+			// 
+			// button12
+			// 
+			this->button12->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button12->FlatAppearance->BorderSize = 0;
+			this->button12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button12->ForeColor = System::Drawing::Color::White;
+			this->button12->Location = System::Drawing::Point(265, 319);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(92, 28);
+			this->button12->TabIndex = 3;
+			this->button12->Text = L"Save";
+			this->button12->UseVisualStyleBackColor = false;
+			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
 			// 
 			// MyForm
 			// 
@@ -666,9 +780,10 @@ namespace WarehouseGUI {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(822, 513);
-			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
 			this->Text = L"Omni-Warehouse";
@@ -680,6 +795,9 @@ namespace WarehouseGUI {
 			this->panel3->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panel4->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -702,6 +820,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	
 	panel1->Hide();
 	panel2->Show();
+	textBox1->Text = "";
+	textBox2->Text = "";
 	for (int i = 0; i < products.size(); i++) {
 		dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
 		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
@@ -996,6 +1116,46 @@ private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ 
 	textBox5->Text = "";
 	textBox6->Text = "";
 	textBox7->Text = "";
+}
+private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e) { //create account
+	users = readUsers();
+
+	if (textBox1->Text == "Administrator" & textBox2->Text == "Admin123*") {
+		panel1->Hide();
+		panel4->Show();
+		textBox1->Text = "";
+		textBox2->Text = "";
+		for (int i = 0; i < users.size(); i++) {
+			dataGridView2->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(users[i].username);
+			dataGridView2->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(users[i].password);
+			if (users[i].isAdmin == 1) {
+				dataGridView2->Rows[i]->Cells[2]->Value = true;
+			}
+			else {
+				dataGridView2->Rows[i]->Cells[2]->Value = false;
+			}
+
+		}
+	}
+	else {
+		MessageBox::Show("Enter the Administrator's correct login details to manage user accounts", "System Message",
+			MessageBoxButtons::OK);
+	}
+}
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) { // save accounts
+	std::ofstream outFile("users.txt");
+	for (int i = 0; i < dataGridView2->Rows->Count; i++) {
+		int isAdmin = 0;
+		if (dataGridView2->Rows[i]->Cells[2]->Value == true) {
+			isAdmin = 1;
+		}
+		if ((dataGridView2->Rows[i]->Cells[0]->Value != nullptr) && (dataGridView2->Rows[i]->Cells[1]->Value != nullptr)) {
+			outFile << msclr::interop::marshal_as<std::string>(dataGridView2->Rows[i]->Cells[0]->Value->ToString()) << " "
+				<< msclr::interop::marshal_as<std::string>(dataGridView2->Rows[i]->Cells[1]->Value->ToString()) << " "
+				<< isAdmin << std::endl;
+		}
+		
+	}
 }
 };
 }

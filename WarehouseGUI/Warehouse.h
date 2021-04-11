@@ -17,7 +17,7 @@ class userClass {
 public:
 	std::string username = "";
 	std::string password = "";
-	bool isAdmin = false;
+	int isAdmin = 0;
 };
 
 void writeDatabase(std::vector<productClass> v); //put database into the text file

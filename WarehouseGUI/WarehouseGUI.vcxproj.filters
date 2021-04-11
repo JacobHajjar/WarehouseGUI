@@ -34,5 +34,8 @@
     <Text Include="database.txt">
       <Filter>Header Files</Filter>
     </Text>
+    <Text Include="users.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

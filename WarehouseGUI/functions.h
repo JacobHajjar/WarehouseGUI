@@ -46,49 +46,42 @@
 	 return products;
  }
 
- /*void writeUsers(std::vector<userClass> v) {
-	 std::ofstream outFile("database.txt");
-	 for (int i = 0; i < v.size(); i++) {
-		 outFile << v[i].username << " " << v[i].password << " " << v[i].isAdmin << std::endl;
-	 }
+ void writeUsers(std::vector<userClass> v) {
+
  }
 
  std::vector<userClass> readUsers() {
 
-	 std::vector<productClass> products;
-	 productClass product;
-	 std::ifstream inFile("database.txt");
-	 std::string pData;
-	 int numOfAttributes = 4;
+	 std::vector<userClass> users;
+	 userClass user;
+	 std::ifstream inFile("users.txt");
+	 std::string uData;
+	 int numOfAttributes = 3;
 	 int i = 1;
 	 int j = 0;
 
-	 while (inFile >> pData) {
+	 while (inFile >> uData) {
 		 switch (i) {
 		 case 1:
-			 product.itemNum = std::stoi(pData);
+			 user.username = uData;
 			 break;
 		 case 2:
-			 product.stock = std::stoi(pData);
+			 user.password = uData;
 			 break;
 		 case 3:
-			 product.itemName = pData;
-			 break;
-		 case 4:
-			 product.itemLoc = pData;
+			 user.isAdmin = std::stoi(uData);
 			 break;
 		 default:
 			 break;
 		 }
-		 if (i == 4) {
-			 i = 0;
-			 products.push_back(product);
+		 if (i == numOfAttributes) {
+			 i = 1;
+			 users.push_back(user);
 		 }
 		 i++;
 	 }
-	 return products;
+	 return users;
  }
- */
 
  bool compareNames(const productClass& left, const productClass& right)
  {

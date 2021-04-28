@@ -1,12 +1,12 @@
-12342 16 Apple C1 
-12349 46 Broccoli B6 
-12358 6 Coconut B2 
-12354 8 ChineseBroccoli D3 
-12347 79 Corn B3 
-12353 3 Grapefruit C3 
-12352 50 Grape B6 
-12343 5 Orange A1 
-12341 18 Pear B1 
-12350 25 Peach C2 
-12348 122 Steak B4 
-12356 567 Plum A4 
+12349 3 Broccoli B6 LowStock ~
+12353 3 Grapefruit C3 HandleWithCare ~
+12343 5 Orange A1 LowStock ~
+12350 5 Peach C2 PeachComments ~
+12358 6 Coconut B2 LowStock ~
+12354 8 ChineseBroccoli D3 LowStock ~
+12342 16 Apple C1 null ~
+12341 18 Pear B1 Bruise Easily ~
+12352 50 Grape B6 null ~
+12347 79 Corn B3 null ~
+12348 122 Steak B4 null ~
+12356 567 Plum A4 null ~

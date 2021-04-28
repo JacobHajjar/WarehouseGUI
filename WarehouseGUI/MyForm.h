@@ -836,6 +836,7 @@ namespace WarehouseGUI {
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(713, 481);
 			this->panel5->TabIndex = 15;
+			this->panel5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel5_Paint);
 			// 
 			// dataGridView3
 			// 
@@ -1026,10 +1027,10 @@ namespace WarehouseGUI {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(822, 513);
-			this->Controls->Add(this->panel5);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
@@ -1080,11 +1081,11 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 				dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
 				dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
 				dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				if (products[i].stock < minStock) {
-					dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+				if (products[i].stock < minStock && products[i].comment == "null") {
+					dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
 				}
 				else {
-					dataGridView1->Rows[i]->Cells[4]->Value = "";
+					dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 				}
 			}
 			loginCorrect = true;
@@ -1101,8 +1102,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 				dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
 				dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
 				dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				if (products[i].stock < minStock) {
-					dataGridView3->Rows[i]->Cells[4]->Value = "Low Stock";
+				if (products[i].stock < minStock && products[i].comment != "null") {
+					dataGridView3->Rows[i]->Cells[4]->Value = "LowStock";
 				}
 				else {
 					dataGridView3->Rows[i]->Cells[4]->Value = "";
@@ -1138,11 +1139,11 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
 		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
 		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock) {
-			dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+		if (products[i].stock < minStock && products[i].comment == "null") {
+			dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
 		}
 		else {
-			dataGridView1->Rows[i]->Cells[4]->Value = "";
+			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
@@ -1153,11 +1154,11 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
 		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
 		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock) {
-			dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+		if (products[i].stock < minStock && products[i].comment == "null" ) {
+			dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
 		}
 		else {
-			dataGridView1->Rows[i]->Cells[4]->Value = "";
+			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
@@ -1240,23 +1241,25 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 	bool checkNull = false;
 	for (int i = 0; i < products.size(); i++) {
 		if (dataGridView1->Rows[i]->Cells[0]->Value == nullptr || dataGridView1->Rows[i]->Cells[1]->Value == nullptr
-			|| dataGridView1->Rows[i]->Cells[2]->Value == nullptr || dataGridView1->Rows[i]->Cells[3]->Value == nullptr) {
+			|| dataGridView1->Rows[i]->Cells[2]->Value == nullptr || dataGridView1->Rows[i]->Cells[3]->Value == nullptr 
+			|| dataGridView1->Rows[i]->Cells[4]->Value == nullptr ) {
 			checkNull = true;
 			dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
 			dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
 			dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
 			dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-			if (products[i].stock < minStock) {
-				dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+			if (products[i].stock < minStock && products[i].comment == "null") {
+				dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
 			}
 			else {
-				dataGridView1->Rows[i]->Cells[4]->Value = "";
+				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 		} else {
 			products[i].itemName = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[0]->Value->ToString());
 			products[i].stock = std::stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()));
 			products[i].itemNum = std::stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()));
 			products[i].itemLoc = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[3]->Value->ToString());
+			products[i].comment = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[4]->Value->ToString());
 		}	
 	}
 	writeDatabase(products);
@@ -1329,11 +1332,11 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 			dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
 			dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
 			dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-			if (products[i].stock < minStock) {
-				dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+			if (products[i].stock < minStock && products[i].comment == "null") {
+				dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
 			}
 			else {
-				dataGridView1->Rows[i]->Cells[4]->Value = "";
+				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 		}
 	}
@@ -1378,11 +1381,11 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 			dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
 			dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
 			dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-			if (products[i].stock < minStock) {
-				dataGridView1->Rows[i]->Cells[4]->Value = "Low Stock";
+			if (products[i].stock < minStock && products[i].comment == "null") {
+				dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
 			}
 			else {
-				dataGridView1->Rows[i]->Cells[4]->Value = "";
+				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 		}
 	}
@@ -1479,11 +1482,11 @@ private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ 
 		dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
 		dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
 		dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock) {
-			dataGridView3->Rows[i]->Cells[4]->Value = "Low Stock";
+		if (products[i].stock < minStock && products[i].comment == "null") {
+			dataGridView3->Rows[i]->Cells[4]->Value = "LowStock";
 		}
 		else {
-			dataGridView3->Rows[i]->Cells[4]->Value = "";
+			dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
@@ -1494,11 +1497,11 @@ private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ 
 		dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
 		dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
 		dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock) {
-			dataGridView3->Rows[i]->Cells[4]->Value = "Low Stock";
+		if (products[i].stock < minStock && products[i].comment == "null") {
+			dataGridView3->Rows[i]->Cells[4]->Value = "LowStock";
 		}
 		else {
-			dataGridView3->Rows[i]->Cells[4]->Value = "";
+			dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
@@ -1561,6 +1564,8 @@ private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ 
 	panel1->Show();
 }
 private: System::Void dataGridView3_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void panel5_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }

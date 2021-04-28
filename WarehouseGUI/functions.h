@@ -5,7 +5,8 @@
  void writeDatabase(std::vector<productClass> v) {
 	 std::ofstream outFile("database.txt");
 	 for (int i = 0; i < v.size(); i++) {
-		 outFile << v[i].itemNum << " " << v[i].stock << " " << v[i].itemName << " " << v[i].itemLoc << " " << std::endl;
+		 outFile << v[i].itemNum << " " << v[i].stock << " " << v[i].itemName << " " << v[i].itemLoc << " " 
+			 << v[i].comment << " " << "~" << std::endl;
 	 }
  }
 
@@ -16,7 +17,7 @@
 	 productClass product;
 	 std::ifstream inFile("database.txt");
 	 std::string pData;
-	 int numOfAttributes = 4;
+	 int numOfAttributes = 5;
 	 int i = 1;
 	 int j = 0;
 
@@ -34,14 +35,24 @@
 		 case 4:
 			product.itemLoc = pData;
 			break;
+		 case 5:
+			 product.comment = pData;
+			 break;
 		 default:
 			break;
 		 }
-		 if (i == 4) {
-			 i = 0;
-			 products.push_back(product);
+		 if (i == 6) {
+			 if (pData == "~") {
+				 i = 1;
+				 products.push_back(product);
+			 }
+			 else {
+				 product.comment = product.comment + " " + pData;
+			 }
 		 }
-		 i++;
+		 else {
+			 i++;
+		 }
 	 }
 	 return products;
  }

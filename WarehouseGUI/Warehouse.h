@@ -11,6 +11,7 @@ public:
 	int stock = 0;
 	std::string itemName = "";
 	std::string itemLoc = ""; //item location
+	std::string comment = "none";
 };
 
 class userClass {

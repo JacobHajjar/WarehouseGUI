@@ -1102,11 +1102,11 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 				dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
 				dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
 				dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				if (products[i].stock < minStock && products[i].comment != "null") {
+				if (products[i].stock < minStock && products[i].comment == "null") {
 					dataGridView3->Rows[i]->Cells[4]->Value = "LowStock";
 				}
 				else {
-					dataGridView3->Rows[i]->Cells[4]->Value = "";
+					dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 				}
 			}
 			loginCorrect = true;

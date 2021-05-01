@@ -1,0 +1,12 @@
+Fri Apr 30 16:33:31 2021
+	- Item Added: Pear , quantity: 3
+Fri Apr 30 16:33:52 2021
+	- Item Added: Pear , quantity: 3
+Fri Apr 30 16:38:55 2021
+	- Item Added: Pear, quantity: 3
+Fri Apr 30 16:41:21 2021
+	- Item Removed: Pear, quantity: 3
+Fri Apr 30 16:41:46 2021
+	- Item Added: Dragonfruit, quantity: 78
+Fri Apr 30 16:42:05 2021
+	- Item Removed: Dragonfruit, quantity: 7

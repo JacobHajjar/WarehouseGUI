@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <algorithm> 
+#include <ctime>
 
 //class of items in database
 class productClass {

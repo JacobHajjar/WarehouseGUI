@@ -1,6 +1,7 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
 #include "functions.h"
+#include "LogForm.h"
 #define minStock 10
 
 
@@ -138,7 +139,9 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::CheckBox^ checkBox4;
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::TextBox^ textBox8;
-private: System::Windows::Forms::Label^ label17;
+private: System::Windows::Forms::Button^ button14;
+private: System::Windows::Forms::Button^ button15;
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -177,6 +180,8 @@ private: System::Windows::Forms::Label^ label17;
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->button15 = (gcnew System::Windows::Forms::Button());
+			this->button14 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -243,7 +248,6 @@ private: System::Windows::Forms::Label^ label17;
 			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -258,6 +262,8 @@ private: System::Windows::Forms::Label^ label17;
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::Control;
+			this->panel2->Controls->Add(this->button15);
+			this->panel2->Controls->Add(this->button14);
 			this->panel2->Controls->Add(this->button8);
 			this->panel2->Controls->Add(this->button7);
 			this->panel2->Controls->Add(this->dataGridView1);
@@ -276,12 +282,38 @@ private: System::Windows::Forms::Label^ label17;
 			this->panel2->Size = System::Drawing::Size(713, 481);
 			this->panel2->TabIndex = 1;
 			// 
+			// button15
+			// 
+			this->button15->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button15->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button15->ForeColor = System::Drawing::Color::White;
+			this->button15->Location = System::Drawing::Point(424, 14);
+			this->button15->Name = L"button15";
+			this->button15->Size = System::Drawing::Size(112, 28);
+			this->button15->TabIndex = 16;
+			this->button15->Text = L"User Logs";
+			this->button15->UseVisualStyleBackColor = false;
+			this->button15->Click += gcnew System::EventHandler(this, &MyForm::button15_Click);
+			// 
+			// button14
+			// 
+			this->button14->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button14->ForeColor = System::Drawing::Color::White;
+			this->button14->Location = System::Drawing::Point(424, 56);
+			this->button14->Name = L"button14";
+			this->button14->Size = System::Drawing::Size(112, 28);
+			this->button14->TabIndex = 15;
+			this->button14->Text = L"Stock Logs";
+			this->button14->UseVisualStyleBackColor = false;
+			this->button14->Click += gcnew System::EventHandler(this, &MyForm::button14_Click);
+			// 
 			// button8
 			// 
 			this->button8->BackColor = System::Drawing::Color::RoyalBlue;
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button8->ForeColor = System::Drawing::Color::White;
-			this->button8->Location = System::Drawing::Point(542, 53);
+			this->button8->Location = System::Drawing::Point(542, 56);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(156, 28);
 			this->button8->TabIndex = 14;
@@ -401,7 +433,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label5->Location = System::Drawing::Point(10, 99);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(63, 20);
+			this->label5->Size = System::Drawing::Size(80, 25);
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"Sort by:";
 			// 
@@ -428,7 +460,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label6->Location = System::Drawing::Point(255, 13);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(23, 20);
+			this->label6->Size = System::Drawing::Size(29, 25);
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"or";
 			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
@@ -440,7 +472,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->checkBox2->ForeColor = System::Drawing::Color::Black;
 			this->checkBox2->Location = System::Drawing::Point(284, 12);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(45, 24);
+			this->checkBox2->Size = System::Drawing::Size(53, 29);
 			this->checkBox2->TabIndex = 4;
 			this->checkBox2->Text = L"ID";
 			this->checkBox2->UseVisualStyleBackColor = true;
@@ -453,7 +485,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->checkBox1->ForeColor = System::Drawing::Color::Black;
 			this->checkBox1->Location = System::Drawing::Point(181, 12);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(68, 24);
+			this->checkBox1->Size = System::Drawing::Size(83, 29);
 			this->checkBox1->TabIndex = 3;
 			this->checkBox1->Text = L"name";
 			this->checkBox1->UseVisualStyleBackColor = true;
@@ -465,7 +497,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label7->Location = System::Drawing::Point(10, 11);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(165, 20);
+			this->label7->Size = System::Drawing::Size(204, 25);
 			this->label7->TabIndex = 2;
 			this->label7->Text = L"Search for product by:";
 			// 
@@ -477,7 +509,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->textBox3->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
 			this->textBox3->Location = System::Drawing::Point(15, 50);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(199, 26);
+			this->textBox3->Size = System::Drawing::Size(199, 30);
 			this->textBox3->TabIndex = 1;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
 			// 
@@ -534,7 +566,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label12->Location = System::Drawing::Point(206, 16);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(110, 20);
+			this->label12->Size = System::Drawing::Size(134, 25);
 			this->label12->TabIndex = 10;
 			this->label12->Text = L"Enter product:";
 			this->label12->Click += gcnew System::EventHandler(this, &MyForm::label12_Click);
@@ -573,7 +605,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label11->Location = System::Drawing::Point(394, 65);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(70, 20);
+			this->label11->Size = System::Drawing::Size(86, 25);
 			this->label11->TabIndex = 7;
 			this->label11->Text = L"Location";
 			// 
@@ -583,7 +615,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label10->Location = System::Drawing::Point(296, 65);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(50, 20);
+			this->label10->Size = System::Drawing::Size(62, 25);
 			this->label10->TabIndex = 6;
 			this->label10->Text = L"Stock";
 			// 
@@ -593,7 +625,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label9->Location = System::Drawing::Point(192, 65);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(26, 20);
+			this->label9->Size = System::Drawing::Size(31, 25);
 			this->label9->TabIndex = 5;
 			this->label9->Text = L"ID";
 			// 
@@ -603,7 +635,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label8->Location = System::Drawing::Point(61, 65);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(51, 20);
+			this->label8->Size = System::Drawing::Size(64, 25);
 			this->label8->TabIndex = 4;
 			this->label8->Text = L"Name";
 			// 
@@ -611,28 +643,28 @@ private: System::Windows::Forms::Label^ label17;
 			// 
 			this->textBox7->Location = System::Drawing::Point(382, 93);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(110, 20);
+			this->textBox7->Size = System::Drawing::Size(110, 22);
 			this->textBox7->TabIndex = 3;
 			// 
 			// textBox6
 			// 
 			this->textBox6->Location = System::Drawing::Point(269, 93);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(110, 20);
+			this->textBox6->Size = System::Drawing::Size(110, 22);
 			this->textBox6->TabIndex = 2;
 			// 
 			// textBox5
 			// 
 			this->textBox5->Location = System::Drawing::Point(156, 93);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(110, 20);
+			this->textBox5->Size = System::Drawing::Size(110, 22);
 			this->textBox5->TabIndex = 1;
 			// 
 			// textBox4
 			// 
 			this->textBox4->Location = System::Drawing::Point(43, 93);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(110, 20);
+			this->textBox4->Size = System::Drawing::Size(110, 22);
 			this->textBox4->TabIndex = 0;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
@@ -677,7 +709,7 @@ private: System::Windows::Forms::Label^ label17;
 			// 
 			this->textBox1->Location = System::Drawing::Point(143, 203);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(170, 20);
+			this->textBox1->Size = System::Drawing::Size(170, 22);
 			this->textBox1->TabIndex = 3;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
@@ -697,7 +729,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->textBox2->Location = System::Drawing::Point(143, 272);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->PasswordChar = '*';
-			this->textBox2->Size = System::Drawing::Size(170, 20);
+			this->textBox2->Size = System::Drawing::Size(170, 22);
 			this->textBox2->TabIndex = 5;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged_1);
 			// 
@@ -718,7 +750,6 @@ private: System::Windows::Forms::Label^ label17;
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
-			this->panel1->Controls->Add(this->label17);
 			this->panel1->Controls->Add(this->label13);
 			this->panel1->Controls->Add(this->label3);
 			this->panel1->Controls->Add(this->button1);
@@ -739,7 +770,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label13->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->label13->Location = System::Drawing::Point(179, 373);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(103, 13);
+			this->label13->Size = System::Drawing::Size(133, 17);
 			this->label13->TabIndex = 7;
 			this->label13->Text = L"Create new account";
 			this->label13->Click += gcnew System::EventHandler(this, &MyForm::label13_Click);
@@ -950,7 +981,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label14->Location = System::Drawing::Point(10, 99);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(63, 20);
+			this->label14->Size = System::Drawing::Size(80, 25);
 			this->label14->TabIndex = 7;
 			this->label14->Text = L"Sort by:";
 			// 
@@ -977,7 +1008,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label15->Location = System::Drawing::Point(255, 13);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(23, 20);
+			this->label15->Size = System::Drawing::Size(29, 25);
 			this->label15->TabIndex = 5;
 			this->label15->Text = L"or";
 			// 
@@ -988,7 +1019,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->checkBox3->ForeColor = System::Drawing::Color::Black;
 			this->checkBox3->Location = System::Drawing::Point(284, 12);
 			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(45, 24);
+			this->checkBox3->Size = System::Drawing::Size(53, 29);
 			this->checkBox3->TabIndex = 4;
 			this->checkBox3->Text = L"ID";
 			this->checkBox3->UseVisualStyleBackColor = true;
@@ -1001,7 +1032,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->checkBox4->ForeColor = System::Drawing::Color::Black;
 			this->checkBox4->Location = System::Drawing::Point(181, 12);
 			this->checkBox4->Name = L"checkBox4";
-			this->checkBox4->Size = System::Drawing::Size(68, 24);
+			this->checkBox4->Size = System::Drawing::Size(83, 29);
 			this->checkBox4->TabIndex = 3;
 			this->checkBox4->Text = L"name";
 			this->checkBox4->UseVisualStyleBackColor = true;
@@ -1013,7 +1044,7 @@ private: System::Windows::Forms::Label^ label17;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label16->Location = System::Drawing::Point(10, 11);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(165, 20);
+			this->label16->Size = System::Drawing::Size(204, 25);
 			this->label16->TabIndex = 2;
 			this->label16->Text = L"Search for product by:";
 			// 
@@ -1025,18 +1056,8 @@ private: System::Windows::Forms::Label^ label17;
 			this->textBox8->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
 			this->textBox8->Location = System::Drawing::Point(15, 50);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(199, 26);
+			this->textBox8->Size = System::Drawing::Size(199, 30);
 			this->textBox8->TabIndex = 1;
-			// 
-			// label17
-			// 
-			this->label17->AutoSize = true;
-			this->label17->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label17->Location = System::Drawing::Point(185, 400);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(88, 13);
-			this->label17->TabIndex = 8;
-			this->label17->Text = L"Warehouse Logs";
 			// 
 			// MyForm
 			// 
@@ -1155,7 +1176,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 	std::fstream out("UserLogs.txt", std::ios::app);
 	out << asctime(ti) << "\t- Username: " << msclr::interop::marshal_as<std::string>(textBox1->Text)
-		<< " signed in" << std::endl;
+		<< " signed out" << std::endl;
 	out.close();
 	textBox1->Text = "";
 	if (MessageBox::Show("Do you wish to proceed? Any unsaved changes may be lost", "Warning", MessageBoxButtons::YesNo) ==
@@ -1643,6 +1664,14 @@ private: System::Void dataGridView3_CellContentClick(System::Object^ sender, Sys
 private: System::Void panel5_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) { // user log
+	LogForm^ form2 = gcnew LogForm(false);
+	form2->ShowDialog();
+}
+private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) { //stock log
+	LogForm^ form2 = gcnew LogForm(true);
+	form2->ShowDialog();
 }
 };
 }

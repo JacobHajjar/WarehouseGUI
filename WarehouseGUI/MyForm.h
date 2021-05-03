@@ -65,7 +65,7 @@ namespace WarehouseGUI {
 
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Label^ label5;
+
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::CheckBox^ checkBox2;
@@ -107,11 +107,11 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::Button^ button11;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Notes;
+
+
+
+
+
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Panel^ panel4;
@@ -124,11 +124,11 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::ErrorProvider^ errorProvider1;
 	private: System::Windows::Forms::Panel^ panel5;
 	private: System::Windows::Forms::DataGridView^ dataGridView3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
+
+
+
+
+
 	private: System::Windows::Forms::Button^ button16;
 	private: System::Windows::Forms::Button^ button17;
 	private: System::Windows::Forms::Button^ button18;
@@ -141,6 +141,34 @@ namespace WarehouseGUI {
 	private: System::Windows::Forms::TextBox^ textBox8;
 private: System::Windows::Forms::Button^ button14;
 private: System::Windows::Forms::Button^ button15;
+private: System::Windows::Forms::DataGridViewCheckBoxColumn^ Column8;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Notes;
+private: System::Windows::Forms::DataGridViewCheckBoxColumn^ Column9;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
+private: System::Windows::Forms::Timer^ timer1;
+private: System::Windows::Forms::Button^ button20;
+private: System::Windows::Forms::Button^ button21;
+private: System::Windows::Forms::TextBox^ textBox10;
+private: System::Windows::Forms::Label^ label18;
+private: System::Windows::Forms::TextBox^ textBox9;
+
+private: System::Windows::Forms::Button^ button22;
+private: System::Windows::Forms::Label^ label5;
+
+
+
+
+
+
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -180,11 +208,13 @@ private: System::Windows::Forms::Button^ button15;
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button14 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -193,7 +223,6 @@ private: System::Windows::Forms::Button^ button15;
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
@@ -232,7 +261,9 @@ private: System::Windows::Forms::Button^ button15;
 			this->Column7 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
 			this->errorProvider1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->button21 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column9 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
 			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -248,6 +279,12 @@ private: System::Windows::Forms::Button^ button15;
 			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->button22 = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -262,6 +299,11 @@ private: System::Windows::Forms::Button^ button15;
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::Control;
+			this->panel2->Controls->Add(this->textBox10);
+			this->panel2->Controls->Add(this->label18);
+			this->panel2->Controls->Add(this->textBox9);
+			this->panel2->Controls->Add(this->button22);
+			this->panel2->Controls->Add(this->button20);
 			this->panel2->Controls->Add(this->button15);
 			this->panel2->Controls->Add(this->button14);
 			this->panel2->Controls->Add(this->button8);
@@ -281,6 +323,19 @@ private: System::Windows::Forms::Button^ button15;
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(713, 481);
 			this->panel2->TabIndex = 1;
+			// 
+			// button20
+			// 
+			this->button20->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button20->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button20->ForeColor = System::Drawing::Color::White;
+			this->button20->Location = System::Drawing::Point(623, 96);
+			this->button20->Name = L"button20";
+			this->button20->Size = System::Drawing::Size(74, 28);
+			this->button20->TabIndex = 17;
+			this->button20->Text = L"Export";
+			this->button20->UseVisualStyleBackColor = false;
+			this->button20->Click += gcnew System::EventHandler(this, &MyForm::button20_Click);
 			// 
 			// button15
 			// 
@@ -338,19 +393,30 @@ private: System::Windows::Forms::Button^ button15;
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AllowUserToResizeColumns = false;
+			this->dataGridView1->AllowUserToResizeRows = false;
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
-				this->Column1,
-					this->Column2, this->Column3, this->Column4, this->Notes
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->Column8,
+					this->Column1, this->Column2, this->Column3, this->Column4, this->Notes
 			});
 			this->dataGridView1->Location = System::Drawing::Point(15, 133);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(683, 336);
+			this->dataGridView1->Size = System::Drawing::Size(683, 306);
 			this->dataGridView1->TabIndex = 11;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
+			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"";
+			this->Column8->MinimumWidth = 6;
+			this->Column8->Name = L"Column8";
+			this->Column8->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->Column8->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
+			this->Column8->Width = 25;
 			// 
 			// Column1
 			// 
@@ -364,14 +430,14 @@ private: System::Windows::Forms::Button^ button15;
 			this->Column2->HeaderText = L"Product ID";
 			this->Column2->MinimumWidth = 6;
 			this->Column2->Name = L"Column2";
-			this->Column2->Width = 125;
+			this->Column2->Width = 110;
 			// 
 			// Column3
 			// 
 			this->Column3->HeaderText = L"# of Stock";
 			this->Column3->MinimumWidth = 6;
 			this->Column3->Name = L"Column3";
-			this->Column3->Width = 125;
+			this->Column3->Width = 110;
 			// 
 			// Column4
 			// 
@@ -427,16 +493,6 @@ private: System::Windows::Forms::Button^ button15;
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label5->Location = System::Drawing::Point(10, 99);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(63, 20);
-			this->label5->TabIndex = 7;
-			this->label5->Text = L"Sort by:";
-			// 
 			// button5
 			// 
 			this->button5->BackColor = System::Drawing::Color::RoyalBlue;
@@ -445,7 +501,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->button5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button5->Location = System::Drawing::Point(212, 50);
+			this->button5->Location = System::Drawing::Point(212, 56);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(88, 26);
 			this->button5->TabIndex = 6;
@@ -507,7 +563,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->textBox3->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->textBox3->Location = System::Drawing::Point(15, 50);
+			this->textBox3->Location = System::Drawing::Point(15, 56);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(199, 26);
 			this->textBox3->TabIndex = 1;
@@ -827,6 +883,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->Size = System::Drawing::Size(449, 301);
 			this->dataGridView2->TabIndex = 0;
+			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView2_CellContentClick);
 			// 
 			// Column5
 			// 
@@ -859,6 +916,7 @@ private: System::Windows::Forms::Button^ button15;
 			// panel5
 			// 
 			this->panel5->BackColor = System::Drawing::SystemColors::Control;
+			this->panel5->Controls->Add(this->button21);
 			this->panel5->Controls->Add(this->dataGridView3);
 			this->panel5->Controls->Add(this->button16);
 			this->panel5->Controls->Add(this->button17);
@@ -876,24 +934,48 @@ private: System::Windows::Forms::Button^ button15;
 			this->panel5->TabIndex = 15;
 			this->panel5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel5_Paint);
 			// 
+			// button21
+			// 
+			this->button21->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button21->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button21->ForeColor = System::Drawing::Color::White;
+			this->button21->Location = System::Drawing::Point(623, 94);
+			this->button21->Name = L"button21";
+			this->button21->Size = System::Drawing::Size(74, 28);
+			this->button21->TabIndex = 18;
+			this->button21->Text = L"Export";
+			this->button21->UseVisualStyleBackColor = false;
+			this->button21->Click += gcnew System::EventHandler(this, &MyForm::button21_Click);
+			// 
 			// dataGridView3
 			// 
 			this->dataGridView3->AllowUserToAddRows = false;
 			this->dataGridView3->AllowUserToDeleteRows = false;
+			this->dataGridView3->AllowUserToResizeColumns = false;
+			this->dataGridView3->AllowUserToResizeRows = false;
 			this->dataGridView3->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
-				this->dataGridViewTextBoxColumn1,
-					this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn5
+			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->Column9,
+					this->dataGridViewTextBoxColumn1, this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4,
+					this->dataGridViewTextBoxColumn5
 			});
 			this->dataGridView3->Location = System::Drawing::Point(15, 133);
 			this->dataGridView3->Name = L"dataGridView3";
-			this->dataGridView3->ReadOnly = true;
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
 			this->dataGridView3->Size = System::Drawing::Size(683, 336);
 			this->dataGridView3->TabIndex = 11;
-			this->dataGridView3->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView3_CellContentClick);
+			this->dataGridView3->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView3_CellClick);
+			// 
+			// Column9
+			// 
+			this->Column9->HeaderText = L"";
+			this->Column9->MinimumWidth = 6;
+			this->Column9->Name = L"Column9";
+			this->Column9->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->Column9->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
+			this->Column9->Width = 25;
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -909,7 +991,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
 			this->dataGridViewTextBoxColumn2->ReadOnly = true;
-			this->dataGridViewTextBoxColumn2->Width = 125;
+			this->dataGridViewTextBoxColumn2->Width = 110;
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
@@ -917,7 +999,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
 			this->dataGridViewTextBoxColumn3->ReadOnly = true;
-			this->dataGridViewTextBoxColumn3->Width = 125;
+			this->dataGridViewTextBoxColumn3->Width = 110;
 			// 
 			// dataGridViewTextBoxColumn4
 			// 
@@ -1059,17 +1141,72 @@ private: System::Windows::Forms::Button^ button15;
 			this->textBox8->Size = System::Drawing::Size(199, 26);
 			this->textBox8->TabIndex = 1;
 			// 
+			// button22
+			// 
+			this->button22->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button22->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button22->ForeColor = System::Drawing::Color::White;
+			this->button22->Location = System::Drawing::Point(15, 445);
+			this->button22->Name = L"button22";
+			this->button22->Size = System::Drawing::Size(100, 28);
+			this->button22->TabIndex = 18;
+			this->button22->Text = L"Filter stock";
+			this->button22->UseVisualStyleBackColor = false;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label5->Location = System::Drawing::Point(10, 99);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(63, 20);
+			this->label5->TabIndex = 7;
+			this->label5->Text = L"Sort by:";
+			// 
+			// textBox9
+			// 
+			this->textBox9->BackColor = System::Drawing::SystemColors::HighlightText;
+			this->textBox9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->textBox9->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox9->Location = System::Drawing::Point(184, 447);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(26, 26);
+			this->textBox9->TabIndex = 20;
+			this->textBox9->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox9_TextChanged);
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label18->Location = System::Drawing::Point(155, 448);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(23, 20);
+			this->label18->TabIndex = 21;
+			this->label18->Text = L"to";
+			// 
+			// textBox10
+			// 
+			this->textBox10->BackColor = System::Drawing::SystemColors::HighlightText;
+			this->textBox10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->textBox10->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox10->Location = System::Drawing::Point(121, 445);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(28, 26);
+			this->textBox10->TabIndex = 22;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(822, 513);
-			this->Controls->Add(this->panel5);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->panel4);
-			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel5);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
 			this->Text = L"Omni-Warehouse";
@@ -1120,15 +1257,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			panel2->Show();
 			textBox2->Text = "";
 			for (int i = 0; i < products.size(); i++) {
-				dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-				dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
-				dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
-				dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+				dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+				dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+				dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 				if (products[i].stock < minStock && products[i].comment == "null") {
-					dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
+					dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
 				}
 				else {
-					dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+					dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 				}
 			}
 			loginCorrect = true;
@@ -1140,15 +1277,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			panel5->Show();
 			textBox2->Text = "";
 			for (int i = 0; i < products.size(); i++) {
-				dataGridView3->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-				dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
-				dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
-				dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+				dataGridView3->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+				dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
+				dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
+				dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 				if (products[i].stock < minStock && products[i].comment == "null") {
-					dataGridView3->Rows[i]->Cells[4]->Value = "LowStock";
+					dataGridView3->Rows[i]->Cells[5]->Value = "LowStock";
 				}
 				else {
-					dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+					dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 				}
 			}
 			loginCorrect = true;
@@ -1185,39 +1322,58 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		panel1->Show();
 	}
 }
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
+private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	for (int i = 0; i < products.size(); i++) {
+		if (System::Convert::ToBoolean(dataGridView1->Rows[i]->Cells["Column8"]->Value) == true) {
+			dataGridView1->Rows[i]->Cells[0]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView1->Rows[i]->Cells[1]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView1->Rows[i]->Cells[2]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView1->Rows[i]->Cells[3]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView1->Rows[i]->Cells[4]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView1->Rows[i]->Cells[5]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+		}
+		else {
+			dataGridView1->Rows[i]->Cells[0]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView1->Rows[i]->Cells[1]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView1->Rows[i]->Cells[2]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView1->Rows[i]->Cells[3]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView1->Rows[i]->Cells[4]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView1->Rows[i]->Cells[5]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+		}
+	}
 }
+
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) { //sort by name button
 	std::sort(products.begin(), products.end(), compareNames);
 	for (int i = 0; i < products.size(); i++) {
-		dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
-		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
-		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+		dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+		dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 		if (products[i].stock < minStock && products[i].comment == "null") {
-			dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
+			dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
 		}
 		else {
-			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+			dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { //sort by number button
 	std::sort(products.begin(), products.end(), compareStock);
 	for (int i = 0; i < products.size(); i++) {
-		dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
-		dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
-		dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+		dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+		dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 		if (products[i].stock < minStock && products[i].comment == "null" ) {
-			dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
+			dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
 		}
 		else {
-			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+			dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
@@ -1250,8 +1406,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	if (checkBox1->Checked) {
 		
 		for (int i = 0; i < products.size(); i++) {
-			if (textBox3->Text == dataGridView1->Rows[i]->Cells[0]->Value->ToString()) {
-			dataGridView1->CurrentCell = dataGridView1->Rows[i]->Cells[0];
+			if (textBox3->Text == dataGridView1->Rows[i]->Cells[1]->Value->ToString()) {
+			dataGridView1->CurrentCell = dataGridView1->Rows[i]->Cells[1];
 			dataGridView1->FirstDisplayedScrollingRowIndex = i;
 			found = true;
 			}
@@ -1263,8 +1419,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	else if (checkBox2->Checked) {
 		for (int i = 0; i < products.size(); i++) {
-			if (textBox3->Text == dataGridView1->Rows[i]->Cells[1]->Value->ToString()) {
-				dataGridView1->CurrentCell = dataGridView1->Rows[i]->Cells[1];
+			if (textBox3->Text == dataGridView1->Rows[i]->Cells[2]->Value->ToString()) {
+				dataGridView1->CurrentCell = dataGridView1->Rows[i]->Cells[2];
 				dataGridView1->FirstDisplayedScrollingRowIndex = i;
 				found = true;
 			}
@@ -1299,26 +1455,26 @@ private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) { //save button
 	bool checkNull = false;
 	for (int i = 0; i < products.size(); i++) {
-		if (dataGridView1->Rows[i]->Cells[0]->Value == nullptr || dataGridView1->Rows[i]->Cells[1]->Value == nullptr
-			|| dataGridView1->Rows[i]->Cells[2]->Value == nullptr || dataGridView1->Rows[i]->Cells[3]->Value == nullptr 
-			|| dataGridView1->Rows[i]->Cells[4]->Value == nullptr ) {
+		if (dataGridView1->Rows[i]->Cells[1]->Value == nullptr || dataGridView1->Rows[i]->Cells[2]->Value == nullptr
+			|| dataGridView1->Rows[i]->Cells[3]->Value == nullptr || dataGridView1->Rows[i]->Cells[4]->Value == nullptr 
+			|| dataGridView1->Rows[i]->Cells[5]->Value == nullptr ) {
 			checkNull = true;
-			dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-			dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
-			dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
-			dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+			dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+			dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+			dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 			if (products[i].stock < minStock && products[i].comment == "null") {
-				dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
+				dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
 			}
 			else {
-				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 		} else {
-			products[i].itemName = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[0]->Value->ToString());
-			products[i].stock = std::stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()));
-			products[i].itemNum = std::stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()));
-			products[i].itemLoc = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[3]->Value->ToString());
-			products[i].comment = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[4]->Value->ToString());
+			products[i].itemName = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString());
+			products[i].stock = std::stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[3]->Value->ToString()));
+			products[i].itemNum = std::stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()));
+			products[i].itemLoc = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[4]->Value->ToString());
+			products[i].comment = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[5]->Value->ToString());
 		}	
 	}
 	writeDatabase(products);
@@ -1403,15 +1559,15 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 		}
 		writeDatabase(products);
 		for (int i = 0; i < products.size(); i++) {
-			dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-			dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
-			dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
-			dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+			dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+			dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+			dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 			if (products[i].stock < minStock && products[i].comment == "null") {
-				dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
+				dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
 			}
 			else {
-				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 		}
 	}
@@ -1463,15 +1619,15 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 		}
 
 		for (int i = 0; i < products.size(); i++) {
-			dataGridView1->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-			dataGridView1->Rows[i]->Cells[1]->Value = products[i].itemNum;
-			dataGridView1->Rows[i]->Cells[2]->Value = products[i].stock;
-			dataGridView1->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+			dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+			dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+			dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 			if (products[i].stock < minStock && products[i].comment == "null") {
-				dataGridView1->Rows[i]->Cells[4]->Value = "LowStock";
+				dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
 			}
 			else {
-				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 		}
 	}
@@ -1535,7 +1691,7 @@ private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ 
 		if (System::Convert::ToBoolean(dataGridView2->Rows[i]->Cells["Column7"]->Value) == true) {
 			isAdmin = 1;
 		}
-		if ((dataGridView2->Rows[i]->Cells[0]->Value != nullptr) && (dataGridView2->Rows[i]->Cells[1]->Value != nullptr)) {
+		if ((dataGridView2->Rows[i]->Cells[1]->Value != nullptr) && (dataGridView2->Rows[i]->Cells[1]->Value != nullptr)) {
 			outFile << msclr::interop::marshal_as<std::string>(dataGridView2->Rows[i]->Cells[0]->Value->ToString()) << " "
 				<< msclr::interop::marshal_as<std::string>(dataGridView2->Rows[i]->Cells[1]->Value->ToString()) << " "
 				<< isAdmin << std::endl;
@@ -1564,30 +1720,30 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::sort(products.begin(), products.end(), compareStock);
 	for (int i = 0; i < products.size(); i++) {
-		dataGridView3->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
-		dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
-		dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		dataGridView3->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
+		dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
+		dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 		if (products[i].stock < minStock && products[i].comment == "null") {
-			dataGridView3->Rows[i]->Cells[4]->Value = "LowStock";
+			dataGridView3->Rows[i]->Cells[5]->Value = "LowStock";
 		}
 		else {
-			dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+			dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
 private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::sort(products.begin(), products.end(), compareNames);
 	for (int i = 0; i < products.size(); i++) {
-		dataGridView3->Rows[i]->Cells[0]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView3->Rows[i]->Cells[1]->Value = products[i].itemNum;
-		dataGridView3->Rows[i]->Cells[2]->Value = products[i].stock;
-		dataGridView3->Rows[i]->Cells[3]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		dataGridView3->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
+		dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
+		dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 		if (products[i].stock < minStock && products[i].comment == "null") {
-			dataGridView3->Rows[i]->Cells[4]->Value = "LowStock";
+			dataGridView3->Rows[i]->Cells[5]->Value = "LowStock";
 		}
 		else {
-			dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+			dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 }
@@ -1596,8 +1752,8 @@ private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ 
 	if (checkBox4->Checked) { //search by name
 
 		for (int i = 0; i < products.size(); i++) {
-			if (textBox8->Text == dataGridView3->Rows[i]->Cells[0]->Value->ToString()) {
-				dataGridView3->CurrentCell = dataGridView3->Rows[i]->Cells[0];
+			if (textBox8->Text == dataGridView3->Rows[i]->Cells[1]->Value->ToString()) {
+				dataGridView3->CurrentCell = dataGridView3->Rows[i]->Cells[1];
 				dataGridView3->FirstDisplayedScrollingRowIndex = i;
 				found = true;
 			}
@@ -1609,8 +1765,8 @@ private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ 
 	}
 	else if (checkBox3->Checked) { //search by number
 		for (int i = 0; i < products.size(); i++) {
-			if (textBox8->Text == dataGridView3->Rows[i]->Cells[1]->Value->ToString()) {
-				dataGridView3->CurrentCell = dataGridView3->Rows[i]->Cells[1];
+			if (textBox8->Text == dataGridView3->Rows[i]->Cells[2]->Value->ToString()) {
+				dataGridView3->CurrentCell = dataGridView3->Rows[i]->Cells[2];
 				dataGridView3->FirstDisplayedScrollingRowIndex = i;
 				found = true;
 			}
@@ -1659,7 +1815,26 @@ private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ 
 	panel5->Hide();
 	panel1->Show();
 }
-private: System::Void dataGridView3_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+private: System::Void dataGridView3_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) { //datagridchanged
+	
+	for (int i = 0; i < products.size(); i++) {
+		if (System::Convert::ToBoolean(dataGridView3->Rows[i]->Cells["Column9"]->Value) == true) {
+			dataGridView3->Rows[i]->Cells[0]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView3->Rows[i]->Cells[1]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView3->Rows[i]->Cells[2]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView3->Rows[i]->Cells[3]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView3->Rows[i]->Cells[4]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+			dataGridView3->Rows[i]->Cells[5]->Style->BackColor = System::Drawing::Color::RoyalBlue;
+		}
+		else {
+			dataGridView3->Rows[i]->Cells[0]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView3->Rows[i]->Cells[1]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView3->Rows[i]->Cells[2]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView3->Rows[i]->Cells[3]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView3->Rows[i]->Cells[4]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			dataGridView3->Rows[i]->Cells[5]->Style->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+		}
+	}
 }
 private: System::Void panel5_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
@@ -1672,6 +1847,49 @@ private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) { //stock log
 	LogForm^ form2 = gcnew LogForm(true);
 	form2->ShowDialog();
+}
+private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::ofstream outFile("Export.txt");
+	bool boxSelected = false;
+
+	for (int i = 0; i < products.size(); i++) {
+		if (System::Convert::ToBoolean(dataGridView1->Rows[i]->Cells["Column8"]->Value) == true) {
+			boxSelected = true;
+			outFile << products[i].itemNum << " " << products[i].stock << " " << products[i].itemName << " " << products[i].itemLoc << " "
+				<< products[i].comment << " " << "~" << std::endl;
+		}
+	}
+	if (boxSelected == true) {
+		MessageBox::Show("Products successfully exported to \"Export.txt\"", "System Message", MessageBoxButtons::OK);
+	}
+	else {
+		MessageBox::Show("No proucts to export", "System Message", MessageBoxButtons::OK);
+	}
+	outFile.close();
+}
+
+private: System::Void button21_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::ofstream outFile("Export.txt");
+	bool boxSelected = false;
+
+	for (int i = 0; i < products.size(); i++) {
+		if (System::Convert::ToBoolean(dataGridView3->Rows[i]->Cells["Column9"]->Value) == true) {
+			boxSelected = true;
+			outFile << products[i].itemNum << " " << products[i].stock << " " << products[i].itemName << " " << products[i].itemLoc << " "
+				<< products[i].comment << " " << "~" << std::endl;
+		}
+	}
+	if (boxSelected == true) {
+		MessageBox::Show("Products successfully exported to \"Export.txt\"", "System Message", MessageBoxButtons::OK);
+	}
+	else {
+		MessageBox::Show("No proucts to export", "System Message", MessageBoxButtons::OK);
+	}
+	outFile.close();
+}
+private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

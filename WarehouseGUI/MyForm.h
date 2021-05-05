@@ -31,8 +31,8 @@ namespace WarehouseGUI {
 			panel5->Hide();
 			users = readUsers();
 			products = readDatabase();
-			dataGridView1->Rows->Add(products.size());
-			dataGridView3->Rows->Add(products.size());
+			//dataGridView1->Rows->Add(products.size());
+			//dataGridView3->Rows->Add(products.size());
 			checkBox1->Checked = true;
 			checkBox4->Checked = true;
 			//
@@ -1219,8 +1219,8 @@ private: System::Windows::Forms::Label^ label17;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(822, 513);
 			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
@@ -1258,6 +1258,32 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
+
+private: System::Void refreshListAdmin(System::Object^ sender, System::EventArgs^ e) { // refresh admin list from vector
+	dataGridView1->Rows->Clear();
+	dataGridView1->Rows->Add(products.size());
+	
+	for (int i = 0; i < products.size(); i++) {
+		dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+		dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+		dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+	}
+}
+private: System::Void refreshListEmp(System::Object^ sender, System::EventArgs^ e) { // refresh employee list from vector
+	dataGridView3->Rows->Clear();
+	dataGridView3->Rows->Add(products.size());
+
+	for (int i = 0; i < products.size(); i++) {
+		dataGridView3->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+		dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
+		dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
+		dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
+		dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+	}
+}
+
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { //login button
 	bool loginCorrect = false;
 
@@ -1272,14 +1298,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			panel1->Hide();
 			panel2->Show();
 			textBox2->Text = "";
-			for (int i = 0; i < products.size(); i++) {
-				dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-				dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
-				dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
-				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-				
-			}
+			refreshListAdmin(sender, e);
+
 			loginCorrect = true;
 			break;
 		}
@@ -1288,13 +1308,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			panel1->Hide();
 			panel5->Show();
 			textBox2->Text = "";
-			for (int i = 0; i < products.size(); i++) {
-				dataGridView3->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-				dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
-				dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
-				dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-			}
+			refreshListEmp(sender, e);
 			loginCorrect = true;
 			break;
 		}
@@ -1356,23 +1370,11 @@ private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) { //sort by name button
 	std::sort(products.begin(), products.end(), compareNames);
-	for (int i = 0; i < products.size(); i++) {
-		dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
-		dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
-		dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-	}
+	refreshListAdmin(sender, e);
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { //sort by number button
 	std::sort(products.begin(), products.end(), compareStock);
-	for (int i = 0; i < products.size(); i++) {
-		dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
-		dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
-		dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-	}
+	refreshListAdmin(sender, e);
 }
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) { //name checkbox
 	if (checkBox1->Checked) {
@@ -1565,14 +1567,7 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 			}
 		}
 		writeDatabase(products);
-		
-		for (int i = 0; i < products.size(); i++) {
-			dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-			dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
-			dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
-			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-			dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-		}
+		refreshListAdmin(sender, e);
 	}
 	else {
 		MessageBox::Show("Selected fields must not be blank", "Warning", MessageBoxButtons::OK);
@@ -1624,15 +1619,7 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 			MessageBox::Show("Item not found or typed incorrectly", "Warning", MessageBoxButtons::OK);
 		}
 
-		for (int i = 0; i < products.size(); i++) {
-			for (int i = 0; i < products.size(); i++) {
-				dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-				dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
-				dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
-				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-			}
-		}
+		refreshListAdmin(sender, e);
 	}
 	else {
 		MessageBox::Show("Selected fields must not be blank", "Warning", MessageBoxButtons::OK);
@@ -1722,23 +1709,11 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::sort(products.begin(), products.end(), compareStock);
-	for (int i = 0; i < products.size(); i++) {
-		dataGridView3->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
-		dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
-		dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-	}
+	refreshListEmp(sender, e);
 }
-private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) { // sort employee list
 	std::sort(products.begin(), products.end(), compareNames);
-	for (int i = 0; i < products.size(); i++) {
-		dataGridView3->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-		dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
-		dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
-		dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-	}
+	refreshListEmp(sender, e);
 }
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) { //search button employee
 	bool found = false;

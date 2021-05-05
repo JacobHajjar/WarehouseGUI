@@ -6,9 +6,10 @@
 12351 10 Dragonfruit C4 none ~
 12350 17 Peach C2 Peach comments here ~
 12341 18 Pear B1 Bruise Easily ~
-12342 19 Apple C1 none ~
+12342 9 Apple C1 Low Stock ~
 12352 50 Grape B6 none ~
 12372 56 PurpleGrape D3 none ~
 12347 92 Corn B3 none ~
 12348 122 Steak B4 Expires 5/3/21 ~
 12356 567 Plum A4 none ~
+12355 9 Chicken A4 Low Stock ~

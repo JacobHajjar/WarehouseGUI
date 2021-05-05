@@ -1,15 +1,15 @@
+12342 9 Apple C1 Low Stock ~
+12344 80 Apricot A1 none ~
 12349 3 Broccoli B6 Low Stock ~
-12353 5 Grapefruit C3 Handle with care ~
-12343 5 Orange A1 Low Stock ~
 12358 6 Coconut B2 Low Stock ~
 12354 8 ChineseBroccoli D3 Order more by 6/4/21 ~
+12355 13 Chicken A3 none ~
+12347 92 Corn B3 none ~
 12351 10 Dragonfruit C4 none ~
+12353 3 Grapefruit C3 Handle with care ~
+12343 5 Orange A1 Low Stock ~
 12350 17 Peach C2 Peach comments here ~
 12341 18 Pear B1 Bruise Easily ~
-12342 9 Apple C1 Low Stock ~
-12352 50 Grape B6 none ~
-12372 56 PurpleGrape D3 none ~
-12347 92 Corn B3 none ~
-12348 122 Steak B4 Expires 5/3/21 ~
-12356 567 Plum A4 none ~
-12355 9 Chicken A4 Low Stock ~
+12372 54 PurpleGrape D3 none ~
+12348 130 Steak B4 Expires 5/3/21 ~
+12345 37 Grape C1 none ~

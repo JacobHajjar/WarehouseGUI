@@ -158,10 +158,12 @@ private: System::Windows::Forms::Button^ button20;
 private: System::Windows::Forms::Button^ button21;
 private: System::Windows::Forms::TextBox^ textBox10;
 private: System::Windows::Forms::Label^ label18;
-private: System::Windows::Forms::TextBox^ textBox9;
+
 
 private: System::Windows::Forms::Button^ button22;
 private: System::Windows::Forms::Label^ label5;
+private: System::Windows::Forms::TextBox^ textBox9;
+private: System::Windows::Forms::Label^ label17;
 
 
 
@@ -208,6 +210,11 @@ private: System::Windows::Forms::Label^ label5;
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->button22 = (gcnew System::Windows::Forms::Button());
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button14 = (gcnew System::Windows::Forms::Button());
@@ -223,6 +230,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
@@ -280,11 +288,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->button22 = (gcnew System::Windows::Forms::Button());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -299,9 +302,10 @@ private: System::Windows::Forms::Label^ label5;
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::Control;
+			this->panel2->Controls->Add(this->label17);
+			this->panel2->Controls->Add(this->textBox9);
 			this->panel2->Controls->Add(this->textBox10);
 			this->panel2->Controls->Add(this->label18);
-			this->panel2->Controls->Add(this->textBox9);
 			this->panel2->Controls->Add(this->button22);
 			this->panel2->Controls->Add(this->button20);
 			this->panel2->Controls->Add(this->button15);
@@ -323,6 +327,62 @@ private: System::Windows::Forms::Label^ label5;
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(713, 481);
 			this->panel2->TabIndex = 1;
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label17->Location = System::Drawing::Point(117, 448);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(41, 20);
+			this->label17->TabIndex = 24;
+			this->label17->Text = L"from";
+			// 
+			// textBox9
+			// 
+			this->textBox9->BackColor = System::Drawing::SystemColors::HighlightText;
+			this->textBox9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->textBox9->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox9->Location = System::Drawing::Point(243, 446);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(54, 26);
+			this->textBox9->TabIndex = 23;
+			// 
+			// textBox10
+			// 
+			this->textBox10->BackColor = System::Drawing::SystemColors::HighlightText;
+			this->textBox10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->textBox10->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox10->Location = System::Drawing::Point(160, 446);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(54, 26);
+			this->textBox10->TabIndex = 22;
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label18->Location = System::Drawing::Point(217, 448);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(23, 20);
+			this->label18->TabIndex = 21;
+			this->label18->Text = L"to";
+			// 
+			// button22
+			// 
+			this->button22->BackColor = System::Drawing::Color::RoyalBlue;
+			this->button22->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->button22->ForeColor = System::Drawing::Color::White;
+			this->button22->Location = System::Drawing::Point(15, 445);
+			this->button22->Name = L"button22";
+			this->button22->Size = System::Drawing::Size(100, 28);
+			this->button22->TabIndex = 18;
+			this->button22->Text = L"Filter stock";
+			this->button22->UseVisualStyleBackColor = false;
+			this->button22->Click += gcnew System::EventHandler(this, &MyForm::button22_Click);
 			// 
 			// button20
 			// 
@@ -492,6 +552,16 @@ private: System::Windows::Forms::Label^ label5;
 			this->button2->Text = L"Name";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label5->Location = System::Drawing::Point(10, 99);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(63, 20);
+			this->label5->TabIndex = 7;
+			this->label5->Text = L"Sort by:";
 			// 
 			// button5
 			// 
@@ -715,6 +785,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(110, 20);
 			this->textBox5->TabIndex = 1;
+			this->textBox5->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox5_TextChanged_1);
 			// 
 			// textBox4
 			// 
@@ -1141,72 +1212,17 @@ private: System::Windows::Forms::Label^ label5;
 			this->textBox8->Size = System::Drawing::Size(199, 26);
 			this->textBox8->TabIndex = 1;
 			// 
-			// button22
-			// 
-			this->button22->BackColor = System::Drawing::Color::RoyalBlue;
-			this->button22->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button22->ForeColor = System::Drawing::Color::White;
-			this->button22->Location = System::Drawing::Point(15, 445);
-			this->button22->Name = L"button22";
-			this->button22->Size = System::Drawing::Size(100, 28);
-			this->button22->TabIndex = 18;
-			this->button22->Text = L"Filter stock";
-			this->button22->UseVisualStyleBackColor = false;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label5->Location = System::Drawing::Point(10, 99);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(63, 20);
-			this->label5->TabIndex = 7;
-			this->label5->Text = L"Sort by:";
-			// 
-			// textBox9
-			// 
-			this->textBox9->BackColor = System::Drawing::SystemColors::HighlightText;
-			this->textBox9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->textBox9->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->textBox9->Location = System::Drawing::Point(184, 447);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(26, 26);
-			this->textBox9->TabIndex = 20;
-			this->textBox9->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox9_TextChanged);
-			// 
-			// label18
-			// 
-			this->label18->AutoSize = true;
-			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label18->Location = System::Drawing::Point(155, 448);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(23, 20);
-			this->label18->TabIndex = 21;
-			this->label18->Text = L"to";
-			// 
-			// textBox10
-			// 
-			this->textBox10->BackColor = System::Drawing::SystemColors::HighlightText;
-			this->textBox10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->textBox10->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->textBox10->Location = System::Drawing::Point(121, 445);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(28, 26);
-			this->textBox10->TabIndex = 22;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(822, 513);
-			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel5);
+			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
 			this->Text = L"Omni-Warehouse";
@@ -1261,12 +1277,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 				dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
 				dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
 				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				if (products[i].stock < minStock && products[i].comment == "null") {
-					dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
-				}
-				else {
-					dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-				}
+				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+				
 			}
 			loginCorrect = true;
 			break;
@@ -1281,12 +1293,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 				dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
 				dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
 				dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-				if (products[i].stock < minStock && products[i].comment == "null") {
-					dataGridView3->Rows[i]->Cells[5]->Value = "LowStock";
-				}
-				else {
-					dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-				}
+				dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 			loginCorrect = true;
 			break;
@@ -1354,12 +1361,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
 		dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
 		dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock && products[i].comment == "null") {
-			dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
-		}
-		else {
-			dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-		}
+		dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 	}
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { //sort by number button
@@ -1369,12 +1371,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
 		dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
 		dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock && products[i].comment == "null" ) {
-			dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
-		}
-		else {
-			dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-		}
+		dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 	}
 }
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) { //name checkbox
@@ -1463,12 +1460,8 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 			dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
 			dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
 			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-			if (products[i].stock < minStock && products[i].comment == "null") {
-				dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
-			}
-			else {
-				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-			}
+			dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
+			
 		} else {
 			products[i].itemName = msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString());
 			products[i].stock = std::stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[3]->Value->ToString()));
@@ -1510,9 +1503,14 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 	bool inVec = false;
 	int pIndex = 0;
 	productClass tempProduct;
-	if ((textBox4->Text != "") && (textBox6->Text != "")) {
-		for (int i = 0; i < products.size(); i++) { //first check to see if stock exists under same name
+	if (((textBox4->Text != "") && (textBox6->Text != "")) || ((textBox5->Text != "") && (textBox6->Text != ""))) {
+		for (int i = 0; i < products.size(); i++) { // check to see if stock exists under same name
 			if (msclr::interop::marshal_as<std::string>(textBox4->Text) == products[i].itemName) {
+				inVec = true;
+				pIndex = i;
+				break;
+			}
+			else if (std::stoi(msclr::interop::marshal_as<std::string>(textBox6->Text)) == products[i].itemNum) {
 				inVec = true;
 				pIndex = i;
 				break;
@@ -1526,6 +1524,9 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 			else if (std::stoi(msclr::interop::marshal_as<std::string>(textBox6->Text)) > 0) {
 				products[pIndex].stock = products[pIndex].stock + std::stoi(msclr::interop::marshal_as<std::string>(textBox6->Text));
 				//add this to item log
+				if (products[pIndex].stock >= minStock && products[pIndex].comment == "Low Stock") {
+					products[pIndex].comment = "none";
+				}
 				std::fstream out("productLogs.txt", std::ios::app);
 				out << asctime(ti) << "\t- Item Added: " << msclr::interop::marshal_as<std::string>(textBox4->Text)
 					<< ", quantity: " << std::stoi(msclr::interop::marshal_as<std::string>(textBox6->Text)) << "\n";
@@ -1543,6 +1544,12 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 					tempProduct.itemNum = std::stoi(msclr::interop::marshal_as<std::string>(textBox5->Text));
 					tempProduct.stock = std::stoi(msclr::interop::marshal_as<std::string>(textBox6->Text));
 					tempProduct.itemLoc = msclr::interop::marshal_as<std::string>(textBox7->Text);
+					if (tempProduct.stock < minStock) {
+						tempProduct.comment = "Low Stock";
+					}
+					else {
+						tempProduct.comment = "none";
+					}
 					products.push_back(tempProduct);
 					dataGridView1->Rows->Add();
 					//add the stock to the item added log
@@ -1558,17 +1565,13 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 			}
 		}
 		writeDatabase(products);
+		
 		for (int i = 0; i < products.size(); i++) {
 			dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
 			dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
 			dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
 			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-			if (products[i].stock < minStock && products[i].comment == "null") {
-				dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
-			}
-			else {
-				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-			}
+			dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 		}
 	}
 	else {
@@ -1610,6 +1613,9 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 					products.erase(products.begin() + pIndex);
 					dataGridView1->Rows->RemoveAt(pIndex);
 				}
+				else if ((products[pIndex].stock > 0 && products[pIndex].stock < minStock) && products[pIndex].comment == "none") {
+					products[pIndex].comment = "Low Stock";
+				}
 				writeDatabase(products);
 				MessageBox::Show("Stock successfully removed", "System Message", MessageBoxButtons::OK);
 			}
@@ -1619,14 +1625,11 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 		}
 
 		for (int i = 0; i < products.size(); i++) {
-			dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
-			dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
-			dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
-			dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-			if (products[i].stock < minStock && products[i].comment == "null") {
-				dataGridView1->Rows[i]->Cells[5]->Value = "LowStock";
-			}
-			else {
+			for (int i = 0; i < products.size(); i++) {
+				dataGridView1->Rows[i]->Cells[1]->Value = msclr::interop::marshal_as<String^>(products[i].itemName);
+				dataGridView1->Rows[i]->Cells[2]->Value = products[i].itemNum;
+				dataGridView1->Rows[i]->Cells[3]->Value = products[i].stock;
+				dataGridView1->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
 				dataGridView1->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 			}
 		}
@@ -1724,12 +1727,7 @@ private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ 
 		dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
 		dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
 		dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock && products[i].comment == "null") {
-			dataGridView3->Rows[i]->Cells[5]->Value = "LowStock";
-		}
-		else {
-			dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-		}
+		dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 	}
 }
 private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1739,12 +1737,7 @@ private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ 
 		dataGridView3->Rows[i]->Cells[2]->Value = products[i].itemNum;
 		dataGridView3->Rows[i]->Cells[3]->Value = products[i].stock;
 		dataGridView3->Rows[i]->Cells[4]->Value = msclr::interop::marshal_as<String^>(products[i].itemLoc);
-		if (products[i].stock < minStock && products[i].comment == "null") {
-			dataGridView3->Rows[i]->Cells[5]->Value = "LowStock";
-		}
-		else {
-			dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
-		}
+		dataGridView3->Rows[i]->Cells[5]->Value = msclr::interop::marshal_as<String^>(products[i].comment);
 	}
 }
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) { //search button employee
@@ -1865,7 +1858,7 @@ private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ 
 		MessageBox::Show("Products successfully exported to \"Export.txt\"", "System Message", MessageBoxButtons::OK);
 	}
 	else {
-		MessageBox::Show("No proucts to export", "System Message", MessageBoxButtons::OK);
+		MessageBox::Show("No proucts selected to export", "System Message", MessageBoxButtons::OK);
 	}
 	outFile.close();
 }
@@ -1885,11 +1878,58 @@ private: System::Void button21_Click(System::Object^ sender, System::EventArgs^ 
 		MessageBox::Show("Products successfully exported to \"Export.txt\"", "System Message", MessageBoxButtons::OK);
 	}
 	else {
-		MessageBox::Show("No proucts to export", "System Message", MessageBoxButtons::OK);
+		MessageBox::Show("No proucts selected to export", "System Message", MessageBoxButtons::OK);
 	}
 	outFile.close();
 }
 private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button22_Click(System::Object^ sender, System::EventArgs^ e) { //filter stock button
+	std::string box1 = msclr::interop::marshal_as<std::string>(textBox10->Text);
+	std::string box2 = msclr::interop::marshal_as<std::string>(textBox9->Text);
+
+	if (box1 == "" && box2 == "") {
+		MessageBox::Show("Active filters removed", "System Message", MessageBoxButtons::OK);
+	}
+	else if ((box1 == "" && box2 != "") || (box1 != "" && box2 == "")){
+		MessageBox::Show("Some ranges are blank. No filters will be applied", "Warning", MessageBoxButtons::OK);
+	}
+	else {
+		bool check1 = true;
+		bool check2 = true;
+		for (int i = 0; i < box1.length(); i++) {
+			if (std::isdigit(box1[i]) == false) {
+				check1 = false;
+			}
+		}
+		for (int i = 0; i < box2.length(); i++) {
+			if (std::isdigit(box2[i]) == false) {
+				check2 = false;
+			}
+		}
+		if (check1 == true && check2 == true) {
+
+			MessageBox::Show("Filter successfully applied", "System Message", MessageBoxButtons::OK);
+		}
+		else {
+			MessageBox::Show("No filters applied. Filter criteria must be an integer", "Warning", MessageBoxButtons::OK);
+		}
+	}
+}
+private: System::Void textBox5_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+	bool inVec = false;
+	for (int i = 0; i < products.size(); i++) {
+		if (msclr::interop::marshal_as<std::string>(textBox5->Text) == std::to_string(products[i].itemNum)) {
+			inVec = true;
+			textBox4->Enabled = false;
+			textBox7->Enabled = false;
+			break;
+		}
+		else {
+			textBox4->Enabled = true;
+			textBox7->Enabled = true;
+		}
+	}
 }
 };
 }

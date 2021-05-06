@@ -3,6 +3,8 @@
 #include <string>
 #include <fstream>
 #include <algorithm> 
+#include <ctime>
+#include<chrono>
 
 //class of items in database
 class productClass {
@@ -11,6 +13,7 @@ public:
 	int stock = 0;
 	std::string itemName = "";
 	std::string itemLoc = ""; //item location
+	std::string comment = "none";
 };
 
 class userClass {

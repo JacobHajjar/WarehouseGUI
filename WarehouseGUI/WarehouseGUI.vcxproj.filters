@@ -29,12 +29,21 @@
     <ClInclude Include="Warehouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LogForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="database.txt">
       <Filter>Header Files</Filter>
     </Text>
     <Text Include="users.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="productLogs.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="UserLogs.txt">
       <Filter>Header Files</Filter>
     </Text>
   </ItemGroup>

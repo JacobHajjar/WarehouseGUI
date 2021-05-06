@@ -133,18 +133,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
+    <ClInclude Include="LogForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Warehouse.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LogForm.resx">
+      <DependentUpon>LogForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Text Include="database.txt" />
+    <Text Include="productLogs.txt" />
+    <Text Include="UserLogs.txt" />
     <Text Include="users.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,15 @@
+12349 3 Broccoli B6 Low Stock ~
+12353 3 Grapefruit C3 Handle with care ~
+12351 4 Dragonfruit C4 Low Stock ~
+12343 15 Orange A1 none ~
+12358 6 Coconut B2 Low Stock ~
+12354 8 ChineseBroccoli D3 Order more by 6/4/21 ~
+12355 13 Chicken A3 none ~
+12350 13 Peach C2 Peach comments here ~
+12341 21 Pear B1 Bruise Easily ~
+12346 30 Carrot B6 none ~
+12380 41 Grape C1 5 Grapes per bunch, grapes expire on 4/15/2022 ~
+12372 54 PurpleGrape D3 none ~
+12344 80 Apricot A1 Bruise easily ~
+12347 92 Corn B3 none ~
+12348 130 Steak B4 Expires 5/3/21 ~

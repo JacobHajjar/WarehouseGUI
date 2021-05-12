@@ -1,0 +1,28 @@
+Fri May  7 14:45:28 2021
+	- Username: 1 signed in
+Fri May  7 14:46:10 2021
+	- Username: 1 signed in
+Fri May  7 14:47:27 2021
+	- Username: Jacob signed in
+Fri May  7 14:48:16 2021
+	- Username: Jacob signed out
+Fri May  7 14:48:58 2021
+	- Username: Jacob signed in
+Fri May  7 14:54:02 2021
+	- Username: Jacob signed out
+Fri May  7 14:54:04 2021
+	- Username: 2 signed in
+Fri May  7 14:55:04 2021
+	- Username: 2 signed out
+Sun May  9 17:56:00 2021
+	- Username: 1 signed in
+Mon May 10 10:38:23 2021
+	- Username: Jacob signed in
+Mon May 10 17:35:20 2021
+	- Username: Admin signed in
+Mon May 10 17:45:05 2021
+	- Username: Admin signed out
+Mon May 10 17:45:15 2021
+	- Username: Employee signed in
+Mon May 10 17:45:53 2021
+	- Username: Employee signed out

@@ -5,6 +5,7 @@ A database management software which can efficiently and securely access, manage
 Features:
 - Create new user accounts with Admin or Employee access
 - Add/Remove product stock
+- Search product stock by name or ID
 - Add/Remove user accounts
 - Timestamped logs for product changes and employee logins
 - Sort warehouse products
@@ -19,6 +20,5 @@ Libraries: Windows Forms and the .NET framework,
 IDE: Visual Studio 2019
 ## User Manual
 https://docs.google.com/document/d/1c3R6t9AA2ywMeRgzA54lktrDGHW9U8ZEbpsdJnep8d8/edit?usp=sharing
-## Installation
-
-
+## Installation 
+Download the zipped folder from the repository. Navigate to "WarehouseRelease" in the folder and click on "WarehouseGUI.exe".

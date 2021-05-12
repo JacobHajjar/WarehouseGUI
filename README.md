@@ -14,8 +14,8 @@ Features:
 - Export product database into a new document
 ## System Architecture
 This program was coded by Jacob Hajjar as a self-taught solo development project and is still currently a work in progress. 
-Lanaguages used: C++/CLI
-Libraries: Windows Forms and the .NET framework
+Lanaguages used: C++/CLI,
+Libraries: Windows Forms and the .NET framework, 
 IDE: Visual Studio 2019
 ## User Manual
 https://docs.google.com/document/d/1c3R6t9AA2ywMeRgzA54lktrDGHW9U8ZEbpsdJnep8d8/edit?usp=sharing
